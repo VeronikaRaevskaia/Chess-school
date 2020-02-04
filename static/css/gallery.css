@@ -1,0 +1,95 @@
+.articles{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin: 20px;
+    grid-gap: 20px;
+    grid-template-rows: auto;
+}
+
+.articles li{
+    flex-basis: 31%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+
+.article-block{
+    position: relative;
+}
+
+.articles div:hover, .photos li:hover{
+    filter: brightness(105%);
+}
+
+.articles div:hover aside, .photos li:hover aside{
+    display: flex;
+    opacity: 1;
+    margin-top: 0;
+}
+
+.articles aside, .photos aside{
+    display: none;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background: rgba(50,16,28,0.5);
+    overflow: hidden;
+    opacity: 0;
+    transition: all ease-in-out 0.5s;
+    margin-top: 100%;
+}
+
+.articles h4{
+    margin-bottom: 9px;
+    font-family: Items;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.article-block{
+    min-width: 341px;
+    min-height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    color: white;
+    position: relative;
+}
+
+.show-button{
+    border: 2px solid white;
+    text-transform: uppercase;
+    padding: 6px 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+div.model-content{
+    width: 67%;
+    position: relative;
+}
+
+
+.photos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 3%;
+    max-height: 72.4vh;
+    overflow-y: auto;
+}
+
+.photos li{
+    flex-basis: 31.33333333%;
+    margin: 1%;
+    cursor: pointer;
+}
+
+.photos img{
+    height: 100%;
+}

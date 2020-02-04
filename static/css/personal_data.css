@@ -1,0 +1,49 @@
+div#wrapper{
+    background: url('../images/pa_backgrounds/30_1.jpg') no-repeat center center;
+    background-size: cover;
+}
+.personal-data {
+    background: rgba(255, 255, 255, 0.75);
+}
+section.teacher{
+    margin: 0 15%;
+}
+section.admin{
+    margin: 0 13%;
+}
+.personal-data ul{
+    width: 10%;
+}
+.teacher .personal-data .number{
+    width: 5%;
+}
+.teacher .personal-data .name, .teacher .personal-data .parent{
+    width: 20%;
+}
+.teacher .personal-data .penalty-checkbox{
+    width: 8%;
+}
+.teacher .personal-data .phone{
+    width: 12%;
+}
+.admin .personal-data ul{
+    width: 11%;
+}
+.admin .personal-data .number{
+    width: 4%;
+}
+.admin .personal-data .name{
+    width: 18%;
+}
+.admin .personal-data .parent{
+    width: 21%;
+}
+.admin .personal-data .email {
+    width: 22%;
+}
+.admin .personal-data .price{
+    width: 8%;
+}
+.admin .personal-data .phone{
+    width: 15%;
+}

@@ -1,0 +1,332 @@
+div#wrapper{
+    background: url('../images/pa_backgrounds/18.jpg') no-repeat top center;
+    background-size: cover;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+main{
+    overflow-y: hidden;
+}
+section{
+    width: 0;
+    margin: 0;
+}
+.left{
+    flex-grow: 3;
+    max-width: 860px;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 50px);
+}
+.space{
+    flex-grow: 2;
+}
+.right{
+    flex-grow: 1.2;
+    background: rgba(255,255,255,0.7);
+    height: calc(100vh - 50px);
+    max-width: 280px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.homeworks-block{
+    display: none;
+    flex-direction: column;
+    height: 100%;
+}
+.homeworks-block.show{
+    display: flex;
+}
+div.new-homework {
+    font-size: 1.4rem;
+    margin: 4%;
+    flex-grow: 1;
+}
+.new-homework label{
+    font-size: 1.3rem;
+    padding:  10px 18px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: Arial;
+    font-family: "Arial Narrow";
+    background: #E7B109;
+    box-shadow: 0 4px 2px -2px #3A312E;
+    color: white;
+    display: inline;
+    height: inherit;
+}
+.buttons-block{
+    display: flex;
+}
+.buttons-block button{
+    margin: 0 2%;
+    background: white;
+}
+.button.download {
+    background: white;
+    font-size: 1.1rem;
+    text-align: center;
+    border-radius: 5px;
+    padding: 11px 22px;
+    display: block;
+    box-shadow: 0.2rem 0.2rem 0.3rem 0.1rem #503E38;
+    cursor: pointer;
+}
+.send{
+    margin-right: 15px;
+}
+button{
+    font-size: 1rem;
+    padding:  4px 17px;
+    cursor: pointer;
+    box-shadow: 0 4px 2px -2px #3A312E;
+    outline: none;
+    border: none;
+}
+.buttons{
+    visibility: hidden;
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 30px 0;
+}
+.buttons span{
+    color: white;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buttons.show{
+    visibility: visible;
+}
+ul.new-files.show{
+    display: block;
+}
+ul.new-files li{
+    border-bottom: 1px gray solid;
+    margin-top: 15px;
+}
+ul.new-files{
+    display: none;
+}
+li.current{
+    background: #CCC7C4;
+}
+div.process{
+    position: relative;
+    max-width: 1060px;
+    background: #ddd;
+    height: 30px;
+}
+div.bar{
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background: green;
+}
+div.file-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px 0 10px 0;
+}
+.file-info span{
+    color: #D8D6D9;
+}
+div.name {
+    display: flex;
+    align-items: center;
+}
+img.status{
+    margin-right: 10px;
+}
+aside span{
+    display: block;
+    text-align: center;
+}
+span.delete{
+    cursor: pointer;
+}
+h3{
+    font-family: "Arial Narrow";
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 15px auto 25px auto;
+}
+li.add-button{
+    height: inherit;
+    width: inherit;
+}
+.wrapper-dropdown {
+    position: relative;
+    width: 230px;
+    padding: 10px;
+    margin: 0 auto;
+    background: #E7B109;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 2px -2px #3A312E;
+    font-family: "Arial Narrow";
+    z-index: 2;
+}
+.wrapper-dropdown span{
+    font-size: 1.3rem;
+}
+.wrapper-dropdown span.hide{
+    visibility: hidden;
+}
+.wrapper-dropdown:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    margin-top: -6px;
+    border-width: 6px 0 6px 6px;
+    border-style: solid;
+    border-color: transparent #fff;
+}
+.wrapper-dropdown .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    font-weight: normal;
+    opacity: 0;
+    pointer-events: none;
+}
+.wrapper-dropdown .dropdown li a {
+    display: block;
+    text-decoration: none;
+    color: #9e9e9e;
+    padding: 10px 20px;
+}
+.wrapper-dropdown .dropdown li:hover a {
+    background: #F6F6F6;
+}
+.wrapper-dropdown .dropdown li.checked{
+    background: #F6F6F6;
+}
+.wrapper-dropdown.active .dropdown {
+    opacity: 1;
+    pointer-events: auto;
+    max-height: 400px;
+    overflow-y: auto;
+}
+.wrapper-dropdown.active:after {
+    border-color: #E7B109 transparent;
+    border-width: 6px 6px 0 6px ;
+    margin-top: -3px;
+}
+.wrapper-dropdown.active {
+    background: #E2AB07;
+    background: linear-gradient(to right, #E7B109 0%, #E2AB07 78%, #ffffff 78%, #ffffff 100%);
+}
+ul.new-homework-block{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.empty-block{
+    display: none;
+    flex-direction: column;
+    height: 100%;
+}
+.empty-block.show{
+    display: block;
+}
+.empty-block img{
+    height: 96px;
+    display: block;
+    margin: 10px 15px;
+}
+.empty-block span{
+    font-family: Items;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.9rem;
+    margin: 10px 15px;
+    font-weight: bold;
+}
+.empty-block>li{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 33.333%;
+}
+h1{
+    color: #D3C7CC;
+}
+.formats-icons{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.formats .formats-icons li{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.formats img{
+    width: 76px;
+    height: 80px;
+}
+.formats-icons li:hover{
+    transition: transform 0.4s ease-in-out;
+}
+.homework{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 4% 0;
+    min-height: 250px;
+}
+.homework li{
+    margin: 1% 0;
+}
+.image img{
+    height: 80px;
+}
+li.file-name{
+    font-size: 1.3rem;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+li.file-name span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.close-file{
+    font-size: 2rem;
+    width: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+.student .homeworks-block{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+}
+.student .homework{
+    flex-basis: 50%;
+}
+.student span.file-name{
+    text-align: center;
+    margin-left: 0;
+    width: 100%;
+    display: block;
+}

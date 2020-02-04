@@ -1,0 +1,31 @@
+div#wrapper{
+    background: url('../images/pa_backgrounds/25.jpg') no-repeat center center;
+    background-size: cover;
+}
+.personal-data ul {
+    width: 0;
+    flex-grow: 1;
+}
+section {
+    margin: 0 22%;
+}
+.excel{
+    background: white;
+    padding: 3%;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.excel:hover{
+    color: #EB584B;
+}
+.excel img{
+    height: 45px;
+    margin: 0 18px 0 0;
+}
+.excel span{
+    text-decoration: underline;
+    font-size: 1.3rem;
+    line-height: 1.7rem;
+}

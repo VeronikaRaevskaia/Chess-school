@@ -1,0 +1,29 @@
+div#wrapper{
+    display: flex;
+    align-items: center;
+}
+main{
+    padding: 0 3%;
+}
+div.message{
+    margin: 50px 0 0;
+    text-align: center;
+    padding-top: 1vh;
+}
+h1, h2{
+    text-align: center;
+    font-family: Items;
+}
+.message img{
+    width: unset;
+    max-height: 400px;
+    max-width: 80%;
+}
+@media screen and (max-width: 768px) {
+    h1{font-size: 1.9rem;}
+    h2{font-size: 1.4rem;}
+}
+@media screen and (max-width: 414px) {
+    h1{font-size: 1.6rem;}
+    h2{font-size: 1.2rem;}
+}

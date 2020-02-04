@@ -1,0 +1,155 @@
+#schedule h1{
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin: 2% 0 5px;
+}
+h2{
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    font-family: Items;
+    text-align: center;
+}
+.info li{
+    margin: 4px;
+    font-size: 1.3rem;
+}
+.dop-info li{
+    font-family: "Arial Narrow";
+    color: #8B3100;
+}
+.when li{
+    font-size: 1.2rem;
+}
+section{
+    overflow: hidden;
+    margin: 0;
+}
+section img{
+    max-height: unset;
+    margin: 0 auto;
+}
+.info{
+    margin: 8px auto;
+    flex-grow: 1;
+}
+#schedule .change{
+    color: #EB3424;
+    font-style: italic;
+    margin: 1%;
+    font-size: 1.2rem;
+}
+#schedule h3{
+    font-family: "Arial Narrow";
+    margin: 3% 0 1% 0;
+    font-size: 1.5rem;
+}
+#schedule h2{
+    font-family: "Arial Narrow";
+    font-size: 1.7rem;
+    margin-bottom: -1%;
+}
+#schedule ul:nth-child(2){
+    display: flex;
+    margin: 1% 2px;
+    box-sizing: border-box;
+    outline: 2px solid;
+    overflow: hidden;
+    background: #E0D4D3;
+}
+#schedule{
+    padding: 0 0 3%;
+    text-align: center;
+}
+#schedule ul{
+    height: 100%;
+}
+.column:not(:last-child){
+    border-right: 2px solid;
+}
+.column ul{
+    display: flex;
+    flex-direction: column;
+}
+.column li{
+    font-size: 1.4rem;
+    flex-grow: 1;
+    height: 46px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.column li:not(:last-child){
+    border-bottom: 2px solid;
+}
+#schedule .title{
+    font-weight: bold;
+    font-family: Items;
+    font-size: 1.6rem;
+    flex-grow: unset;
+    background: white;
+}
+.column:nth-child(1),.column:nth-child(2){
+    width: 28%;
+}
+.column:nth-child(3){
+    width: 18%;
+}
+.column:nth-child(4){
+    width: 26%;
+}
+#lessons-number .content{
+    display: flex;
+}
+.lessons-left, .lessons-right{
+    height: 100%;
+}
+.lessons-left ul{
+    display: flex;
+    flex-direction: column;
+}
+.lessons-left li{
+    flex-grow: 1;
+}
+.lessons-right > ul{
+    display: flex;
+}
+@media screen and (max-width: 1100px) {
+    section .info{
+       max-width: 240px;
+    }
+}
+
+
+@media screen and (max-width: 938px) {
+    h1{
+        font-size: 1.8rem;
+    }
+    #schedule h2{
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .column li {
+        font-size: 1.2rem;
+    }
+    #schedule .title{
+        font-size: 1.4rem;
+    }
+    #schedule h3 {
+        font-size: 1.35rem;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .column li {
+        height: 64px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    #schedule h3 {
+        font-size: 1.22rem;
+    }
+}

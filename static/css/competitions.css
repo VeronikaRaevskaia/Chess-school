@@ -1,0 +1,236 @@
+#competitions{
+    display: flex;
+}
+.calendar{
+    width: 0;
+    flex-grow: 2;
+    max-width: 800px;
+    visibility: hidden;
+    padding: 1.5% 1.5% 1.5% 0;
+}
+.calendar .date span{
+    margin: 5%;
+}
+.calendar.show{
+    visibility: visible;
+}
+table{
+    margin: 0 auto;
+    border-spacing: 0.6rem;
+    font-family: Arial;
+    font-size: 1.4rem;
+    border-collapse: separate;
+}
+thead{
+    font-size: 1.2rem;
+}
+table td{
+    text-align: center;
+    outline: 2px solid #F1F3F4;
+    height: 53px;
+    width: 53px;
+    position: relative;
+}
+th{
+    color: #85533D;
+}
+td div.status{
+    font-size: 3.8rem;
+
+}
+td.not-passed{
+    color: #B77855;
+    background: #F3EBEB;
+}
+.current-month{
+    background: white;
+}
+td.lesson-day{
+    background: #C0D0AA;
+}
+td.past-lesson div.number{
+   font-size: 2.1rem;
+}
+td.past-lesson div.status{
+    margin-top: -15px;
+}
+td.today{
+    border: 1px solid #53361D;
+    box-sizing: border-box;
+    outline: 2px solid #53361D;
+}
+.pay{
+    display: flex;
+    flex-direction: row-reverse;
+}
+div.statistics{
+    z-index: 5;
+}
+.statistics .model-content{
+    display: flex;
+    flex-direction: row;
+    padding: 2%;
+}
+div.statistics ul{
+    margin: 0 10px;
+}
+ul.unattended{
+    margin-right: 20px;
+}
+#dop{
+    display: flex;
+}
+#competitions .more, #competitions .rules-header{
+    color: white;
+    font-size: 1.3rem;
+    text-decoration: underline;
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    flex-grow: 1;
+}
+#competitions .rules-header{
+    display: none;
+}
+#competitions .more:hover, #competitions.rules-header:hover{
+    color: #3F1F13;
+}
+#competitions .main-info-content{
+    margin: 0 2% 4% 2%;
+}
+#competitions .date ul {
+    display: flex;
+    margin: 1.5rem auto;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.3rem;
+    max-width: 800px;
+}
+#competitions .arrow{
+    cursor: pointer;
+    border-color: #E0D4D3;
+}
+.competitions-info li.title, .competitions-info .page li{
+    box-sizing: border-box;
+    border: 1px solid #F1F3F4;
+    padding: 2% 2% 2% 6%;
+    font-size: 1.3rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.competitions-info li.title{
+    font-weight: bold;
+    font-family: Items;
+    font-size: 1.4rem;
+    text-align: center;
+}
+.competitions-info-content>ul:nth-child(4) ul li{
+    flex-direction: column;
+}
+.competitions-info p.dop{
+    font-size: 0.98rem;
+}
+.competitions-info{
+    width: 0;
+    flex-grow: 5;
+    padding: 1.5%;
+}
+.competitions-info-content{
+    display: flex;
+}
+.competitions-info-content>ul:nth-child(1){
+    width: 8%;
+}
+.competitions-info-content>ul:nth-child(2){
+    width: 14%;
+    text-align: center;
+}
+.competitions-info-content>ul:nth-child(3){
+    width: 16%;
+}
+.competitions-info-content>ul:nth-child(4){
+    width: 50%;
+}
+.competitions-info-content>ul:nth-child(5){
+    width: 9%;
+}
+.competitions-info-content>ul:nth-child(6){
+    width: 9%;
+}
+.competitions-info ul.color span{
+    width: 2rem;
+    height: 2rem;
+    margin-left: 10%;
+}
+.competitions-info img{
+    width: 70%;
+    display: none;
+}
+.competitions-info .result span{
+    display: none;
+}
+.competitions-info .result img{
+    display: block;
+}
+.competitions-info .page{
+    display: none;
+}
+.competitions-info .page.active{
+    display: block;
+}
+.competitions-info ol{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+.competitions-info ol li{
+    margin: 1% 2%;
+    cursor: pointer;
+    width: auto;
+    font-size: 1.2rem;
+}
+.competitions-info ol li.active{
+    color: #E98112;
+}
+td.competition{
+    outline: 2px solid #53361D;
+    color: white;
+}
+td div{
+    width: 50%;
+    height: inherit;
+    top: 0;
+    position: absolute;
+}
+td span{
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    left: 0;
+}
+td div:nth-child(2){
+    left: 0;
+}
+td div:nth-child(3){
+    right: 0;
+}
+.competitions-info ul.color .page li:nth-child(6n+1) span, td.com-0, td div.com-0{
+    background: #BA2CA5;
+}
+.competitions-info ul.color .page li:nth-child(6n+2) span, td.com-1, td div.com-1{
+    background: #5A8F49;
+}
+.competitions-info ul.color .page li:nth-child(6n+3) span, td.com-2, td div.com-2{
+    background: #E98112;
+}
+.competitions-info ul.color .page li:nth-child(6n+4) span, td.com-3, td div.com-3{
+    background: #FECA3A;
+}
+.competitions-info ul.color .page li:nth-child(6n+5) span, td.com-4, td div.com-4{
+    background: #E44D34;
+}
+.competitions-info ul.color .page li:nth-child(6n+6) span, td.com-5, td div.com-5{
+    background: #6E63BE;
+}

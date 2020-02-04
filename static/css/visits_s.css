@@ -1,0 +1,211 @@
+.main-info{
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+div.visits{
+    display: none;
+}
+.calendar{
+    max-width: 800px;
+    margin: 0 auto 4% auto;
+    visibility: hidden;
+}
+.calendar.show{
+    visibility: visible;
+}
+table{
+    margin: 0 auto;
+    border-spacing: 0.6rem;
+    font-family: Laconic;
+    font-weight: bold;
+    font-size: 2rem;
+    border-collapse: separate;
+}
+thead{
+    font-size: 1.2rem;
+}
+table td{
+    text-align: center;
+    border: 6px solid rgba(1,1,1,0);
+    outline:  2px solid #8E5D32;
+    height: 72px;
+    width: 80px;
+}
+td div.status{
+    font-size: 3.8rem;
+
+}
+td.not-passed{
+    color: #B77855;
+    background: rgba(255,255,255,0.6);
+}
+.current-month{
+    background: white;
+}
+td.lesson-day{
+    background: #C0D0AA;
+}
+td.past-lesson div.number{
+   font-size: 2.1rem;
+}
+td.past-lesson div.status{
+    margin-top: -15px;
+}
+td.today{
+    border: 6px solid #F9C42F;
+    box-sizing: border-box;
+    outline: 2px solid #53361D;
+}
+.pay{
+    display: flex;
+    flex-direction: row-reverse;
+}
+div.statistics{
+    z-index: 5;
+}
+.statistics .model-content{
+    display: flex;
+    flex-direction: row;
+    padding: 2%;
+}
+div.statistics ul{
+    margin: 0 10px;
+}
+ul.unattended{
+    margin-right: 20px;
+}
+#dop{
+    display: flex;
+}
+.more, .rules-header{
+    color: white;
+    font-size: 1.3rem;
+    text-decoration: underline;
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    flex-grow: 1;
+}
+.rules-header{
+    display: none;
+}
+.more:hover,.rules-header:hover{
+    color: #3F1F13;
+}
+.main-info-content{
+    margin: 0 2% 4% 2%;
+}
+@media screen and (max-width: 1475px) {
+    .space {
+        flex-grow: 3;
+    }
+}
+@media screen and (max-width: 1245px) {
+    .space {
+        flex-grow: 1.6;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .space {
+        flex-grow: 1;
+    }
+    .dop-info {
+        flex-grow: 1.2;
+    }
+    table td {
+        height: 66px;
+    }
+}
+@media screen and (max-width: 940px) {
+    .space,.dop-info{
+        display: none;
+    }
+    .main-info{
+        max-width: unset;
+    }
+    .rules-header{
+        display: block;
+    }
+}
+@media screen and (max-width: 768px) {
+    table td {
+        font-size: 1.8rem;
+        height: 60px;
+    }
+    .arrow {
+        border-width: 6px;
+        height: 26px;
+        width: 26px;
+    }
+    .date span {
+        font-size: 1.6rem;
+    }
+}
+@media screen and (max-width: 630px) {
+    table {
+        border-spacing: 0.4rem;
+    }
+    table td {
+        height: 46px;
+        font-size: 1.5rem;
+    }
+    .more, .rules-header {
+        font-size: 1.2rem;
+    }
+}
+@media screen and (max-width: 470px) {
+    table td {
+        height: 30px;
+        font-size: 1.4rem;
+    }
+    .date span {
+        font-size: 1.5rem;
+    }
+    div.date ul {
+        margin-top: 7%;
+    }
+    .arrow {
+        border-width: 5px;
+        height: 23px;
+        width: 23px;
+    }
+    .main-info {
+        margin-top: 10%;
+    }
+}
+@media screen and (max-width: 400px) {
+    table {
+        border-spacing: 0.2rem;
+    }
+    table td {
+        height: 25px;
+        font-size: 1.3rem;
+    }
+}
+@media screen and (max-width: 360px) {
+    table td {
+        height: 25px;
+        font-size: 1.2rem;
+    }
+    .date span {
+        font-size: 1.4rem;
+    }
+    .arrow {
+        border-width: 5px;
+        height: 20px;
+        width: 20px;
+    }
+    .more, .rules-header {
+        font-size: 1.1rem;
+    }
+}
+@media screen and (max-width: 320px) {
+    table td {
+        height: 17px;
+        font-size: 0.8rem;
+    }
+    .date span {
+        font-size: 1.3rem;
+    }
+}

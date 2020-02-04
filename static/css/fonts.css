@@ -1,0 +1,66 @@
+@font-face {
+    font-family: Decorative;
+    src: url('../fonts/Andantino script/Andantinoscript.eot');
+    src: local('&d&'),
+    url('../fonts/Andantino script/Andantinoscript.woff2') format('woff2'),
+    url('../fonts/Andantino script/Andantinoscript.woff') format('woff'),
+    url('../fonts/Andantino script/Andantinoscript.ttf') format('truetype'),
+    url('../fonts/Andantino script/Andantinoscript.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: Laconic;
+    src: url('../fonts/Eurofurencelight/Arsenal-Regular.eot');
+    src: local('&b&'),
+    url('../fonts/Eurofurencelight/Arsenal-Regular.woff2') format('woff2'),
+    url('../fonts/Eurofurencelight/Arsenal-Regular.woff') format('woff'),
+    url('../fonts/Eurofurencelight/Arsenal-Regular.ttf') format('truetype'),
+    url('../fonts/Eurofurencelight/Arsenal-Regular.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: Chess;
+    src: url('../fonts/Chess/Chess.eot');
+    src: local('&b&'),
+    url('../fonts/Chess/Chess.woff2') format('woff2'),
+    url('../fonts/Chess/Chess.woff') format('woff'),
+    url('../fonts/Chess/Chess.ttf') format('truetype'),
+    url('../fonts/Chess/Chess.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: Handwritten;
+    src: url('../fonts/AdventureC/adventurec.eot');
+    src: local('&b&'),
+    url('../fonts/AdventureC/adventurec.woff2') format('woff2'),
+    url('../fonts/AdventureC/adventurec.woff') format('woff'),
+    url('../fonts/AdventureC/adventurec.ttf') format('truetype'),
+    url('../fonts/AdventureC/adventurec.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: Items;
+    src: url('../fonts/Oranienbaum/Oranienbaum.eot');
+    src: local('&b&'),
+    url('../fonts/Oranienbaum/Oranienbaum.woff2') format('woff2'),
+    url('../fonts/Oranienbaum/Oranienbaum.woff') format('woff'),
+    url('../fonts/Oranienbaum/Oranienbaum.ttf') format('truetype'),
+    url('../fonts/Oranienbaum/Oranienbaum.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: Quote;
+    src: url('../fonts/EpsilonCTT/EpsilonCTT.eot');
+    src: local('&b&'),
+    url('../fonts/EpsilonCTT/EpsilonCTT.woff2') format('woff2'),
+    url('../fonts/EpsilonCTT/EpsilonCTT.woff') format('woff'),
+    url('../fonts/EpsilonCTT/EpsilonCTT.ttf') format('truetype'),
+    url('../fonts/EpsilonCTT/EpsilonCTT.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

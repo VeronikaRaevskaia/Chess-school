@@ -1,0 +1,153 @@
+div#wrapper{
+    margin: 0;
+    max-width: 100%;
+    height: auto;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+canvas{
+    opacity: 1;
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: 1;
+}
+html{
+    overflow-y: hidden;
+}
+nav#menu{
+    box-shadow: none;
+}
+div.form{
+    position: relative;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+.log-in{
+    display: none;
+    margin: 0 auto;
+}
+.log-in.show{
+    display: block;
+}
+form[name = "log_in"], form[name = "reset-password"]{
+    margin: 0 auto 20px auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    padding: 10px;
+    min-width: 290px;
+}
+form[name = "log_in"] > div, form[name = "reset-password"] > div{
+    width: 290px;
+    margin-bottom: 24px;
+}
+label, div.input-box input{
+    display: block;
+    box-sizing: border-box;
+    font-family: Items;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+}
+div.input-box input {
+    border-bottom: 3px dotted #3F1F13;
+    font-size: 1.7rem;
+}
+label{
+    font-size: 1.3rem;
+    line-height: 1.4rem;
+    margin-bottom: 9px;
+    transition: font-size 0.5s, transform 0.5s;
+    width: 290px;
+}
+input{
+    width: 100%;
+}
+div.input-box input:focus{
+    border-bottom: 3px dotted white;
+}
+input[type = "button"]{
+    padding: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-bottom: 16px;
+    outline: none;
+    border: 3px #FFFFFF solid;
+    border-radius: 100px;
+    font-family: Laconic;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: white;
+    box-sizing: border-box;
+    width: 290px;
+}
+input[type = "button"]:focus{
+    border: 3px #EBB40E solid;
+}
+.reset-password{
+    display: none;
+    margin: 0 auto;
+}
+.reset-password.show{
+   display: block;
+}
+#forget, #remember{
+    text-align: center;
+    cursor: pointer;
+    text-decoration: underline;
+}
+#answer{
+    font-size: 1.1rem;
+    text-align: center;
+}
+#case{
+    font-size: 0.9rem;
+    text-align: center;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background 5000s ease-in-out 0s; /* выставляется желаемая задержка */
+}
+div.focus label{
+    transform: translateY(-10px);
+    font-size: 1.1rem;
+}
+main{
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background: url('../images/pa_backgrounds/log_in.jpg') no-repeat center center;
+    background-size: cover;
+}
+.log-in-item{
+    display: none;
+}
+footer, div.decoration{
+    display: none;
+}
+@media screen and (max-width: 1024px) {
+    nav#menu ul li a, nav#menu div {
+        font-size: 1.4rem;
+    }
+}
+@media screen and (max-width: 754px) {
+    .log-in-item{
+        display: block;
+    }
+    nav#menu{
+        height: auto;
+        overflow: hidden;
+    }
+}

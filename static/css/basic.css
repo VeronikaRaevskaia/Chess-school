@@ -1,0 +1,117 @@
+h1{
+    text-transform: uppercase;
+}
+.sl-1 .slide-1{background: url('../images/basic/basic_s1_1.jpg') no-repeat center center;
+    background-size: cover;}
+.sl-1 .slide-2{background: url('../images/basic/basic_s1_2.jpg') no-repeat center center;
+    background-size: cover;}
+.sl-1 .slide-3{background: url('../images/basic/basic_s1_3.jpg') no-repeat center center;
+    background-size: cover;}
+.sl-1 .slide-4{background: url('../images/basic/basic_s1_4.jpg') no-repeat center center;
+    background-size: cover;}
+.sl-2 .slide-1{background: url('../images/tiles/basic_s2_1.jpg') no-repeat center center;
+    background-size: cover;}
+.sl-2 .slide-2{background: url('../images/basic/basic_s2_2.jpg') no-repeat center center;
+    background-size: cover;}
+.n1{background: url('../images/tiles/achievements_1.jpg') no-repeat center center;
+    background-size: cover;}
+section{
+    margin: 40px 0;
+}
+.description{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px;
+}
+.description ul{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 50%;
+    flex-wrap: wrap;
+    list-style-type: disc;
+}
+.description ul li{
+    padding: 8px 0;
+    font-size: 1.2rem;
+}
+.description div{
+    font-family: Items;
+    font-size: 2rem;
+    flex: 1 1 50%;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.description p{
+    flex: 1 1 50%;
+    flex-wrap: wrap;
+    font-size: 1.2rem;
+}
+.achievements{
+    position: relative;
+}
+.achievements-block{
+    display: block;
+}
+.achievements img{
+}
+.achievements-text{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    justify-content: space-around;
+}
+.achievements-text ul{
+    display: flex;
+}
+
+.achievements-text h5{
+    text-transform: uppercase;
+    font-family: Items;
+    font-size: 2.4rem;
+}
+
+.achievements-text li{
+    font-size: 1.2rem;
+    flex: 1 1 25%;
+    text-align: center;
+    margin: 2%;
+}
+.achievements-text li.middle{
+}
+.circle{
+    margin: -5px auto 30px auto;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 4px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.circle span{
+    display: block;
+}
+span.number{
+    font-size: 2rem;
+}
+aside.button{
+    border: 4px solid white;
+    padding: 6px;
+    width: 20%;
+    text-transform: uppercase;
+    text-align: center;
+}
+.button a{
+    color: white;
+    font-family: Items;
+    font-size: 1.4rem;
+}
+

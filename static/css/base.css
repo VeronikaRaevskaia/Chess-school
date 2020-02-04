@@ -1,0 +1,143 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+html{
+    font-size: 100%;
+    color: #5B3718;
+    height: 100vh;
+    width: 100%;
+    background: white;
+    font-family: Arial;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+body{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-height: 100%;
+    min-width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+ul{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    color: #3F1F13;
+    text-align: center;
+    display: block;
+}
+div#wrapper{
+    margin: 0 auto;
+    max-width: 2400px;
+    background: white;
+    position: relative;
+}
+#wrapper{
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    width: 100%;
+}
+header{
+    z-index: 5;
+    min-width: 100%;
+}
+form[name="obj_form"]{
+    display: none;
+}
+#up{
+    width: 50px;
+    height: 50px;
+    background: rgba(129,92,83,0.8);
+    position: absolute;
+    bottom: -50px;
+    left: 10%;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 1.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-transition: bottom 500ms, opacity 500ms;
+    -o-transition: bottom 500ms, opacity 500ms;
+    transition: bottom 500ms, opacity 500ms;
+    opacity: 0;
+}
+#up:after{
+    content: '';
+    display: block;
+    border-top: 3px solid white;
+    border-left: 3px solid white;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    width: 10px;
+    height: 10px;
+    margin-top: 5px;
+
+}
+#up.fixed{
+bottom: 60px;
+opacity: 1;
+}
+div.slide, ul.slider{
+height: 600px;
+margin: 10px 0;
+}
+li.slide div{
+height: 60px;
+}
+
+ul.slider li div{
+background-size: cover;
+height: 100%;
+}
+div.sidebar{
+position: absolute;
+width: 200px;
+height: 100%;
+top: 0;
+bottom: 0;
+left: calc(100% + 25px);
+right: 0;
+margin: auto;
+}
+main{
+width: 100%;
+}
+sidebar.up{
+position: fixed;
+bottom: 80px;
+height: 80px;
+}
+.payment-menu {
+display: none;
+position: absolute;
+left: 0;
+top: 0;
+bottom: 0;
+height: 100%;
+width: 230px;
+}
+li.slide.show{
+opacity: 1;
+z-index: 3;
+height: 100%;
+}
+svg{
+    display: none;
+}

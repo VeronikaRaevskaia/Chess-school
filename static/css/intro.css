@@ -1,0 +1,312 @@
+#intro{
+    min-height: 100vh;
+    background: url('../images/index/intro.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#intro>div{
+    width: 100%;
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+#intro>div>div{
+    width: 80%;
+}
+#intro .images-menu{
+    display: flex;
+    width: 100%;
+    height: 0;
+    min-height: 10rem;
+    margin-bottom: 3%;
+}
+#intro .logo img {
+    margin-bottom: 15px;
+}
+.contacts-info{
+    font-size: 1.4rem;
+    font-weight: bold;
+    font-family: Arial Narrow;
+    color: #E98114;
+    text-align: right;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+#intro .front, #intro .back{
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#intro .front{
+    z-index: 2;
+}
+#intro .back{
+    transform: rotateY(180deg);
+}
+#intro .back p{
+    padding: 4% 6%;
+}
+#intro .flipper, .front, .back{
+    width: 100%;
+    height: 100%;
+}
+#intro .flipper{
+    perspective: 1000px;
+    flex-basis: 14.2857%;
+    cursor: pointer;
+}
+#intro .flipper:hover .flip-container{
+    transform: rotateY(180deg);
+}
+#intro .flip-container{
+    position: relative;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    height: 100%;
+}
+#intro .flipper a{
+    display: block;
+    height: 100%;
+}
+#intro .back{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#intro .back svg{
+    height: 48%;
+    width: 32%;
+    fill: #FFFFFF;
+    display: block;
+}
+#intro .back span{
+    font-family: Items;
+    color: white;
+    margin-top: 6%;
+    font-size: 1.4rem;
+}
+#intro .flipper:nth-child(1) .front{
+    background: url('../images/tiles/fasad_s.jpg') top center;
+    background-size: cover;
+}
+#intro .flipper:nth-child(2) .front{
+    background: url('../images/tiles/gallery.jpg') center center;
+    background-size: cover;
+}
+#intro .flipper:nth-child(3) .front{
+    background: url('../images/tiles/competitions.jpg') center center;
+    background-size: cover;
+}
+#intro .flipper:nth-child(4) .front{
+    background: url('../images/tiles/timetable3_1.jpg') center center;
+    background-size: cover;
+}
+#intro .flipper:nth-child(5) .front{
+    background: url('../images/tiles/inside_s.jpg') center center;
+    background-size: cover;
+}
+#intro .flipper:nth-child(6) .front{
+    background: url('../images/tiles/basic_s2_1.jpg') center center;
+    background-size: cover;
+}
+#intro .flipper:nth-child(7) .front{
+    background: url('../images/tiles/faq.jpg') center center;
+    background-size: cover;
+}
+#intro .flipper:nth-child(1) .back, .flipper:nth-child(5) .back{
+    background: #BA2CA5;
+}
+#intro .flipper:nth-child(2) .back, .flipper:nth-child(6) .back{
+    background: #5A8F49;
+}
+#intro .flipper:nth-child(3) .back, .flipper:nth-child(7) .back{
+    background: #E98112;
+}
+#intro .flipper:nth-child(4) .back{
+    background: #FECA3A;
+}
+#intro #intro .what{
+    font-size: 1.2rem;
+}
+#intro .media-networks{
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-around;
+    padding: 2% 2% 2% 0;
+    align-items: flex-end;
+}
+#intro article{
+    display: flex;
+    width: 100%;
+    margin: 10px auto;
+}
+#intro .license{
+    margin-top: 10%;
+    display: block;
+    text-align: right;
+    font-family: Arial Narrow;
+    font-size: 1.2rem;
+    color: #5B3718;;
+    cursor: pointer;
+}
+#intro .rates, #intro .news{
+    margin-top: 25px;
+    list-style-type: disc;
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+#intro .rates li, #intro .news li{
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: Arial Narrow;
+    margin: 2%;
+    line-height: 2rem;
+}
+#intro li.header{
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: Arial Narrow;
+    color: #E98114;
+    list-style-type: none;
+}
+#intro .rates span{
+    display: inline-block;
+    text-transform: lowercase;
+    font-family: Arial Narrow;
+}
+#intro .left{
+    width: 0;
+    flex-grow: 1;
+    margin-right: 4%;
+    margin-left: 4%;
+    display: flex;
+    flex-direction: column;
+    min-width: 350px;
+}
+#intro .middle, #intro .right{
+    width: 0;
+    flex-grow: 1;
+    min-width: 273px;
+    display: flex;
+    flex-direction: column;
+}
+#intro .contacts-info li{
+    margin: 2%;
+}
+.license img{
+    width: auto;
+}
+#intro .rates li.details{
+    list-style-type: none;
+    text-transform: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+#intro .rates li.details a{
+    color: #E98114;
+}
+#intro .rates li a, #intro .news li a{
+    text-align: left;
+}
+@media screen and (max-width: 1300px) {
+    #intro .rates li, #intro .news li {
+        font-size: 1.3rem;
+    }
+    #intro .flipper:first-child{
+        display: none;
+    }
+    #intro .flipper {
+        flex-basis: 16.6666%;
+        height: 8rem;
+    }
+}
+@media screen and (max-width: 1124px) {
+    #intro .images-menu {
+        margin-bottom: 7%;
+        flex-wrap: wrap;
+        height: 24rem;
+    }
+    #intro .flipper {
+        flex-basis: 33.3333%;
+        height: 12rem;
+    }
+    #intro>div>div{
+        justify-content: center;
+        flex-direction: column;
+    }
+    #intro article{
+        flex-wrap: wrap;
+    }
+    #intro .middle, #intro .right, #intro .left{
+        margin-bottom: 0;
+    }
+    #intro .middle, #intro .right{
+        margin-left: 0;
+    }
+    #intro .left{
+        flex-grow: unset;
+        min-width: 300px;
+    }
+    #intro .rates, #intro .news {
+        margin-top: 0;
+        display: block;
+    }
+}
+@media screen and (max-width: 850px) {
+    #intro>div>div {
+        width: 90%;
+    }
+    #intro .rates li, #intro .news li {
+        font-size: 1.2rem;
+    }
+    #intro .images-menu {
+        height: 14rem;
+    }
+    #intro .flipper {
+        height: 7rem;
+    }
+}
+@media screen and (max-width: 730px) {
+    #intro, #intro>div{
+        height: 100%;
+    }
+    #intro article{
+        height: inherit;
+    }
+    #intro .middle{
+        width: 100%;
+    }
+    #intro .left{
+        width: 100%;
+        min-width: unset;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    .contacts-info{
+        font-size: 1.3rem;
+    }
+    #intro .logo img {
+        margin: 10px auto 0;
+    }
+    #intro .media-networks{
+        margin: 10px 0 25px;
+        padding: 0;
+    }
+    #intro .images-menu{
+        display: none;
+    }
+}

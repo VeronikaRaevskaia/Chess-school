@@ -1,0 +1,175 @@
+slider{
+    width: 100%;
+    user-select: none;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    padding: 30% 0;
+}
+.slides-container{
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+slide{
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    display: block;
+    opacity: 0;
+    overflow: hidden;
+}
+slide p{
+    position: absolute;
+    bottom: 10%;
+    font-family: Items;
+    font-size: 4rem;
+    color: white;
+    left: 100%;
+    z-index: -1;
+}
+slide img{
+    max-height: unset;
+    height: inherit;
+}
+.arrow-container{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 30px;
+}
+.arrow{
+    border: 5px solid rgba(255,255,255,0.5);
+    border-bottom: none;
+    border-left: none;
+    display: block;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+.arrow:hover{
+    border-color: white;
+}
+.arrow-left{
+    float: left;
+    transform: rotate(-135deg) translateY(20px) translateX(-20px);
+    transition: border-color 0.4s ease;
+}
+.arrow-right{
+    float: right;
+    transform: rotate(45deg) translateY(20px) translateX(-20px);
+    transition: border-color 0.4s ease;
+}
+.dots-wrapper{
+    width: 100%;
+    position: absolute;
+    height: 30px;
+    bottom: 17px;
+}
+.dots-container{
+    height: inherit;
+    max-width: 100px;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+.dots-container li{
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: rgba(255,255,255,0.5);
+}
+.dots-container li.active{
+    background: white;
+}
+.moveLeftCurrentSlide{
+    animation-name: moveLeftCurrent;
+    animation-duration: 0.8s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+.moveLeftNextSlide{
+    animation-name: moveLeftNext;
+    animation-duration: 0.8s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+.moveRightCurrentSlide{
+    animation-name: moveRightCurrent;
+    animation-duration: 0.8s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+.moveRightNextSlide {
+    animation-name: moveRightNext;
+    animation-duration: 0.8s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+@keyframes moveLeftCurrent{
+    from{
+        margin-left: 0;
+        opacity: 1;
+    }
+    to{
+        margin-left: -100%;
+        opacity: 1;
+    }
+}
+@keyframes moveLeftNext{
+    from{
+        margin-left: 100%;
+        opacity: 1;
+    }
+    to{
+        margin-left: 0;
+        opacity: 1;
+    }
+}
+@keyframes moveRightCurrent{
+    from{
+        margin-left: 0;
+        opacity: 1;
+    }
+    to{
+        margin-left: 100%;
+        opacity: 1;
+    }
+}
+@keyframes moveRightNext{
+    from{
+        margin-left: -100%;
+        opacity: 1;
+    }
+    to{
+        margin-left: 0;
+        opacity: 1;
+    }
+}
+.enter-settings{
+    left: 4%;
+    transition: left ease-in-out 0.5s;
+    z-index: 2;
+}
+.enter-active{
+    left: 4%;
+    z-index: 2;
+}
+#pa-slider{
+    padding: 0;
+}
+#pa-slider img{
+    width: 100%;
+}
+slide a{
+    display: block;
+    width: inherit;
+    height: inherit;
+}

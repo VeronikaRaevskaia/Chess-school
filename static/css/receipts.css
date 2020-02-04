@@ -1,0 +1,31 @@
+div.title-img{
+    background: linear-gradient(rgba(190,148,119,0.5),rgba(190,148,119,0.8)), url('../images/pay1.jpg') no-repeat bottom;
+    background-size: cover;
+}
+div.date{
+    visibility: hidden;
+}
+div.date.show{
+    visibility: visible;
+}
+div.buttons-atd{
+    margin: 10px 0;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.buttons-atd button{
+    font-size: 1rem;
+    padding:  4px 17px;
+    margin: 0 4px;
+    cursor: pointer;
+    background: #DFCFC7;
+    box-shadow: 0 4px 2px -2px gray;
+    outline: none;
+    border: none;
+}
+div.buttons-atd span{
+    margin-top: 3px;
+    margin-right: 40px;
+    color: #A30000;
+    font-family: Arial;
+}

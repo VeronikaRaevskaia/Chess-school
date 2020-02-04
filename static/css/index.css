@@ -1,0 +1,397 @@
+h2{
+    font-family: Items;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2.4rem;
+}
+h3{
+    text-align: center;
+}
+#admission{
+    margin: 0;
+    padding: 6%;
+    font-size: 1.3rem;
+    background: -webkit-gradient(linear,left top, left bottom,from(rgba(237,230,230,0.5)),to(rgba(237,230,230,0.8))), url('../images/index/chess.jpg') repeat;
+    background: -webkit-linear-gradient(rgba(237,230,230,0.5),rgba(237,230,230,0.8)), url('../images/index/chess.jpg') repeat;
+    background: -o-linear-gradient(rgba(237,230,230,0.5),rgba(237,230,230,0.8)), url('../images/index/chess.jpg') repeat;
+    background: linear-gradient(rgba(237,230,230,0.5),rgba(237,230,230,0.8)), url('../images/index/chess.jpg') repeat;
+}
+#admission h4, #admission .send{
+    text-align: center;
+    font-family: Items;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 3rem;
+    padding: 20px;
+}
+.border{
+    border: 3px dotted #5A3617;
+    padding-bottom: 2.4%;
+    overflow: hidden;
+}
+#admission .send{
+    width: 200px;
+    margin: 0 auto;
+    border: 3px solid #5A3617;
+    font-size: 1.5rem;
+    background: #F1BC1D;
+    font-family: Items;
+    cursor: pointer;
+}
+form[name="sign_in"]{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: 0 auto 30px auto;
+    width: 50%;
+}
+.comments{
+    background: white;
+    padding: 30px;
+    margin: 0;
+}
+.comments li{
+    margin: 20px;
+    font-family: "Arial Narrow";
+    font-style: italic;
+}
+.comments li p{
+    font-size: 1.5rem;
+    max-height: 3.3rem;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    background: #FFFFFF;
+    cursor: pointer;
+}
+.comments li p:after{
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: -o-linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+    background: -webkit-linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0)), to(rgba(255,255,255,1)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0), rgba(255,255,255,1));
+    background: -o-linear-gradient(top, rgba(255,255,255,0), rgba(255,255,255,1));
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+}
+.box{
+    line-height: 28px;
+}
+.box:before {
+    content: "";
+    float: left;
+    width: 5px;
+    height: 200px;
+}
+.box >*:first-child {
+    width: 100%;
+    margin-left: -5px;
+}
+.box:after{
+    content: "\02026";
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    display: block;
+    float: right;
+    position: relative;
+    font-weight: bold;
+    top: -25px;
+    width: 3em;
+    margin-left: -3em;
+    padding-right: 5px;
+    text-align: right;
+    background-size: 100% 100%;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), color-stop(50%, white), to(white));
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), white 50%, white);
+    background: -o-linear-gradient(left, rgba(255, 255, 255, 0), white 50%, white);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
+}
+.box.full:after {
+    content: " ";
+}
+.comments li .full p{
+    max-height: unset;
+}
+.comments li .full p:after{
+    height: unset;
+}
+.comments .name{
+    font-family: Items;
+    text-align: right;
+    color: #43743F;
+    font-weight: bold;
+    margin-top: 4px;
+    font-size: 1.3rem;
+}
+.input-box{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+}
+.input-box label, .input-box input{
+    width: 50%;
+    padding: 7px;
+}
+.input-box input{
+    border: none;
+    outline: 1px solid gray;
+}
+.message{
+    margin: 35px;
+    display: block;
+    text-align: center;
+    height: 20px;
+}
+.videowrapper{
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+}
+.videowrapper iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+ul.menu{
+    display: none;
+}
+.parallax {
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+}
+.parallax img{
+    max-height: unset;
+}
+#text{
+    flex-basis: 30%;
+    display: flex;
+}
+#text ul{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 4% 7% 4% 15%;
+    font-size: 1.4rem;
+    font-family: Laconic;
+    list-style-type: upper-roman;
+}
+#about-school{
+    background: url('../images/index/intro.jpg');
+}
+#about-school>div{
+    margin: 3% auto;
+    width: 70%;
+}
+main h1{
+    margin: 0;
+}
+@media screen and (max-width: 1100px) {
+    .parallax > a{
+        flex-basis: 100%;
+    }
+    #text{
+        flex-basis: 100%;
+        padding: 0 2%;
+    }
+    #text ul{
+        margin: 2% 2% 2% 7%;
+    }
+    #text li{
+        margin: 2% 0;
+    }
+}
+@media screen and (max-width: 1089px) {
+    ul.teachers {
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+    }
+    .teachers li {
+        -ms-flex-preferred-size: 46%;
+        flex-basis: 46%;
+    }
+    form[name="sign_in"] {
+        width: 70%;
+    }
+}
+@media screen and (max-width: 883px) {
+    .teachers span {
+        min-height: 210px;
+    }
+    .purposes li {
+        margin: 1%;
+    }
+    .purposes article {
+        padding: 2% 3%;
+    }
+    .important li:nth-child(1) {
+        margin: 8% 0 8% 4%;
+    }
+    .important li:nth-child(2) {
+        margin: 8% 4%;
+    }
+    .important h2 {
+        font-size: 1.5rem;
+        line-height: 2.4rem;
+    }
+    .important p {
+        font-size: 1.2rem;
+        line-height: 1.9rem;
+    }
+    .important a {
+        font-size: 1.23rem;
+        margin: 2% 0;
+    }
+    #text ul{
+        font-size: 1.3rem;
+    }
+}
+@media screen and (max-width: 720px) {
+    .teachers li{
+        -ms-flex-preferred-size: 98%;
+        flex-basis: 98%;
+    }
+    .teachers li span{
+        min-height: 280px;
+        overflow: hidden;
+    }
+    .comments{
+        padding: 0.2% 0;
+    }
+    form[name="sign_in"] {
+        width: 100%;
+    }
+    .purposes h3 {
+        font-size: 1.5rem;
+    }
+    h2, #admission h4{
+        font-size: 2rem;
+    }
+}
+@media screen and (max-width: 620px) {
+    .purposes li {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    .purposes article {
+        width: 95%;
+        -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+        order: 1;
+        margin-bottom: 3%;
+        margin-top: 3%;
+    }
+    article p{
+        font-size: 1.1rem;
+    }
+    .comments li p {
+        font-size: 1.3rem;
+    }
+    h2, #admission h4{
+        font-size: 1.5rem;
+    }
+    .parallax, .parallax img{
+        overflow: hidden;
+        min-height: 294px;
+        margin-top: 1px;
+    }
+    .important{
+        flex-direction: column;
+    }
+    .important li:nth-child(1){
+        margin: 4% auto;
+        width: 92%;
+    }
+   .important li:nth-child(2){
+        margin: 0 auto;
+        width: 92%;
+    }
+    .important img{
+        display: none;
+    }
+    .important h2 {
+        margin: 2% 0 3%;
+    }
+    #text ul{
+        font-size: 1.2rem;
+    }
+}
+@media screen and (max-width: 452px) {
+    #admission h4{
+        font-size: 2.5rem;
+    }
+    .input-box label, .input-box input{
+        height: 40px;
+        width: unset;
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+    }
+    .input-box{
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    .comments{
+        display: none;
+    }
+    .important p{
+        font-size: 1.1rem;
+        line-height: 1.7rem;
+    }
+    .important h2 {
+        font-size: 1.4rem;
+        line-height: 2.2rem;
+    }
+    .important a{
+        font-size: 1.13rem;
+    }
+}
+@media screen and (max-width: 375px) {
+    .important li:nth-child(1){
+        min-width: 340px;
+    }
+    #text ul{
+        font-size: 1.1rem;
+    }
+}
+@media screen and (max-width: 354px) {
+    .input-box label, .input-box input{
+        height: 40px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+}
+@media screen and (max-width: 320px) {
+    .important li:nth-child(1) {
+        margin: 0 auto;
+    }
+}

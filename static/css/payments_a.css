@@ -1,0 +1,77 @@
+div#wrapper{
+    background: url('../images/pa_backgrounds/12_1.jpg') no-repeat center;
+    background-size: cover;
+}
+.title span{
+    background: white;
+}
+.personal-data .title{
+    height: 94px;
+}
+.personal-data .name{
+    width: 30%;
+}
+.payment{
+    background: rgba(210,197,192,0.85);
+    background: white;
+}
+.personal-data{
+    width: 70%;
+}
+.personal-data.by-groups{
+    width: 56%;
+    margin-left: 14%;
+}
+.personal-data .number{
+    width: 7%;
+    text-align: right;
+}
+.personal-data .penalty-checkbox{
+    width: 9%;
+}
+.admin{
+    flex-direction: row;
+    position: relative;
+    max-width: 74%;
+    margin: 0 auto;
+}
+.personal-data .group{
+    width: 12%;
+}
+.personal-data .recommended-sum{
+    width: 20%;
+}
+.personal-data .paid{
+    width: 12%;
+}
+.personal-data .group-debt{
+    width: 12%;
+}
+.group li:not(.title){
+    cursor: pointer;
+}
+:active, :hover, :focus {
+    outline: 0;
+    outline-offset: 0;
+}
+.by-groups li.data{
+    width: 100%;
+}
+.personal-data.by-groups .number{
+    width: 6%;
+}
+.personal-data.by-groups .group{
+    width: 18%;
+}
+.personal-data.by-groups .paid{
+    width: 14%;
+}
+.personal-data.by-groups .group-debt{
+    width: 20%;
+}
+.personal-data.by-groups .teacher{
+    width: 29%;
+}
+.personal-data.by-groups .weekdays{
+    width: 24%;
+}

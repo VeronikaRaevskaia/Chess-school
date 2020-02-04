@@ -1,0 +1,151 @@
+#teachers{
+    display: flex;
+    margin: 30px 0 10px 0;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#teachers li{
+    flex-basis: 319px;
+    min-width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+#teachers h4{
+    margin-bottom: 9px;
+    text-align: center;
+}
+.teacher{
+    width: 100%;
+    min-height: 430px;
+    display: block;
+    position: relative;
+}
+span.teacher.article-1{
+    background: url('../images/teachers/teachers_1.jpg') no-repeat center;
+    background-size: cover;
+}
+span.teacher.article-2{
+    background: url('../images/teachers/teachers_2.jpg') no-repeat center;
+    background-size: cover;
+}
+span.teacher.article-3{
+    background: url('../images/teachers/teachers_3.jpg') no-repeat center;
+    background-size: cover;
+}
+span.teacher.article-4{
+    background: url('../images/teachers/teachers_4.jpg') no-repeat center;
+    background-size: cover;
+}
+span.teacher.article-5{
+    background: url('../images/teachers/teachers_5.jpg') no-repeat center;
+    background-size: cover;
+}
+span.teacher.article-6{
+    background: url('../images/teachers/teachers_6.jpeg') no-repeat center;
+    background-size: cover;
+}
+span.teacher.article-7{
+    background: url('../images/teachers/teachers_7.jpg') no-repeat center;
+    background-size: cover;
+}
+span.teacher.article-8{
+    background: url('../images/teachers/teachers_8.jpg') no-repeat center;
+    background-size: cover;
+}
+span.teacher.article-9{
+    background: url('../images/teachers/teachers_9.jpg') no-repeat center;
+    background-size: cover;
+}
+span.teacher.article-10{
+    background: url('../images/teachers/teacher_10.jpg') no-repeat center;
+    background-size: cover;
+}
+.teacher-info{
+    text-align: center;
+    text-transform: uppercase;
+    background: rgba(204,176,163,0.9);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+#teachers .front, #teachers .back{
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 319px;
+    height: 430px;
+}
+#teachers .front{
+    z-index: 2;
+}
+#teachers .back{
+    transform: rotateY(180deg);
+    background: #F3EBEB;
+}
+#teachers .back p{
+    padding: 4% 6%;
+}
+#teachers .flipper, #teachers .front, #teachers .back{
+    height: 430px;
+    width: 319px;
+}
+#teachers .flipper{
+    perspective: 1000px;
+    margin: 0 auto;
+}
+#teachers .flip-container{
+    position: relative;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+}
+@media screen and (min-width: 1090px) {
+    #teachers .flipper:hover .flip-container{
+        transform: rotateY(180deg);
+    }
+}
+@media screen and (max-width: 1090px) {
+    #teachers{
+        justify-content: space-evenly;
+    }
+    #teachers li{
+        width: 306px;
+        margin-bottom: 50px;
+    }
+    #teachers .flipper, #teachers .front, #teachers .back {
+        height: 410px;
+        width: 300px;
+    }
+    .teacher{
+        min-height: 410px;
+    }
+    #teachers .back{
+        display: none;
+    }
+}
+@media screen and (max-width: 800px) {
+    #teachers li {
+        width: 220px;
+        margin-bottom: 30px;
+        flex-basis: 220px;
+    }
+    #teachers .flipper, #teachers .front, #teachers .back {
+        height: 310px;
+        width: 220px;
+    }
+    .teacher{
+        min-height: 310px;
+    }
+    #teachers h4 {
+        max-width: 200px;
+        margin: 0 auto 9px;
+    }
+}

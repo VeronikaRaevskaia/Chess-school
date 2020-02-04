@@ -1,0 +1,100 @@
+div#wrapper{
+    background: url("../images/pa_backgrounds/16.jpg") no-repeat top center;
+    background-size: cover;
+}
+.personal-data {
+    flex-wrap: wrap;
+    width: 0;
+    flex-grow: 9.4;
+}
+.personal-data ul {
+    width: 0;
+    flex-grow: 1;
+}
+.admin {
+    flex-direction: row;
+    position: relative;
+    max-width: 75%;
+    margin: 0 auto;
+}
+.personal-data li{
+    padding: 8px 0;
+    display: block;
+    font-size: 1.2rem;
+}
+.personal-data ul.row{
+    display: flex;
+    flex-direction: row;
+    flex-basis: 100%;
+}
+.personal-data ul.column{
+    display: flex;
+    flex-direction: column;
+    padding: 12px 0;
+    outline: 1px solid;
+    justify-content: space-around;
+}
+.personal-data li.time{
+    width: 0;
+    height: 100%;
+    flex-grow: 0.5;
+    outline: 1px solid;
+    padding: 0;
+    display: flex;
+}
+.row:nth-child(odd){
+    background: rgba(243,235,235,0.5);
+}
+.row:nth-child(even){
+    background: rgba(218,218,218,0.6);
+}
+.row:first-child .column{
+    padding: 0;
+    justify-content: flex-start;
+}
+li.weekday{
+    background: white;
+    height: 60px;
+}
+.personal-data li:not(.weekday), li:not(.time-ul li:nth-child(1)){
+    padding: 12px 0;
+}
+.personal-data li i{
+    font-size: 1.12rem;
+}
+.row:first-child .column li{
+    padding: 12px 0;
+}
+.personal-data .time-ul{
+    display: block;
+    flex-grow: 0.5;
+}
+.row:first-child .column li:first-child{
+    position: fixed;
+    font-family: "Arial Narrow";
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-decoration: underline;
+    color: #411800;
+    border-bottom: 2px solid;
+    display: flex;
+}
+.row:first-child .column li:not(:first-child){
+    height: 40px;
+}
+.row:first-child .column li:nth-child(2){
+    margin-top: 86px;
+}
+.time-ul li:nth-child(1){
+    width: 100%;
+    background: white;
+    padding: 12px 0;
+    position: fixed;
+    border-bottom: 2px solid;
+    height: 60px;
+}
+.time-ul li:nth-child(2){
+    height: calc(100% - 86px);
+    width: 100%;
+    margin-top: 86px;
+}

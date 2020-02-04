@@ -1,0 +1,81 @@
+#sidebar-menu{
+    flex-grow: 2;
+    width: 0;
+    position: relative;
+}
+#sidebar-menu>ul{
+    position: fixed;
+    padding: 0 1.4% 1.4% 1.4%;
+    background: white;
+}
+.search{
+    min-height: 94px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #411800;
+    border-bottom: 2px solid #DADADA;
+}
+.search li:nth-child(2) {
+    flex-grow: 1;
+    width: 0;
+}
+.search input{
+    font-size: 1.3rem;
+    font-weight: bold;
+    box-sizing: border-box;
+    background: url('../icons/lupa.png') no-repeat center left;
+    background-size: contain;
+    font-family: "Arial Narrow";
+    border: none;
+    line-height: 3rem;
+    padding-left: 47px;
+    width: 193px;
+}
+.menu-block span{
+    font-weight: bold;
+    height: 80px;
+    font-family: Laconic;
+    font-family: "Arial Narrow";
+    font-size: 1.3rem;
+    text-decoration: underline;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu-block li{
+    font-family: Laconic;
+    font-family: "Arial Narrow";
+    font-size: 1.3rem;
+    height: 38px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+}
+.menu-block li:hover, .menu-block li.checked{
+    color: #EB584B;
+}
+.menu-block li:before{
+    content: '- ';
+}
+.excel{
+    padding: 5% 6%;
+    font-family: "Arial Narrow";
+    font-size: 1.3rem;
+    line-height: 1.7rem;
+    font-weight: bold;
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #DADADA;
+    box-sizing: border-box;
+    width: 193px;
+}
+.excel img{
+    height: 45px;
+    margin: 0 8px 0 2px;
+}
+.excel span:hover{
+    color: #EB584B;
+}

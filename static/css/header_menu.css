@@ -1,0 +1,45 @@
+form[name=obj_form]{
+    display: none;
+}
+nav#menu a.current_page{
+    color: white;
+    background: #D8A303;
+    background: -webkit-linear-gradient(top, #EFBD33 20%, #D8A303 50%, #C09105 80%);
+    background: -moz-linear-gradient(top, #EFBD33 20%, #D8A303 50%, #C09105 80%);
+    background: -o-linear-gradient(top, #EFBD33 20%, #D8A303 50%, #C09105 80%);
+    background: -ms-linear-gradient(top, #EFBD33 20%, #D8A303 50%, #C09105 80%);
+}
+nav#menu ul.fadeout_settings{
+    max-height: 1000px;
+}
+nav#menu ul.fadeout_active{
+    max-height: 0;
+    -webkit-transition: max-height 1s ease-in-out;
+    -o-transition: max-height 1s ease-in-out;
+    transition: max-height 1s ease-in-out;
+}
+nav#menu ul.fadein_settings{
+    max-height: 0;
+}
+nav#menu ul.fadein_active{
+    max-height: 1000px;
+    -webkit-transition: max-height 1s ease-in-out;
+    -o-transition: max-height 1s ease-in-out;
+    transition: max-height 1s ease-in-out;
+}
+nav#menu ul li a.students:nth-child(2), #intro .flipper .student:nth-child(2) {
+    display: none;
+}
+@media screen and (max-width: 1435px) {
+    section#competitions, nav#menu ul li a.students:nth-of-type(1), #intro .flipper .student:nth-of-type(1){
+        display: none;
+    }
+    nav#menu ul li a.students:nth-of-type(2){
+        display: flex;
+    }
+    #intro .flipper .student:nth-of-type(2){
+        display: block;
+    }
+}
+
+

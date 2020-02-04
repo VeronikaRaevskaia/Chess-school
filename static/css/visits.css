@@ -1,0 +1,256 @@
+.main-info{
+    flex-grow: 5;
+    max-width: 860px;
+}
+.dop-info{
+    flex-grow: 2;
+    background: rgba(255,255,255,0.7);
+    max-width: 230px;
+    margin-left: 0.5%;
+    height: auto;
+    display: flex;
+}
+.space{
+    flex-grow: 4;
+}
+h3{
+    margin: 20px auto 5px auto;
+    text-align: center;
+}
+.date span{
+    color: white;
+    font-size: 1.8rem;
+}
+div.date{
+    width: 100%;
+}
+div.date ul{
+    display: flex;
+    margin: 4% auto 10px auto;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.3rem;
+    max-width: 800px;
+}
+div.date img{
+    height: 22px;
+    cursor: pointer;
+}
+span.month{
+    margin-right: 15px;
+}
+div.table{
+    display: none;
+    margin: 0 20px 20px 20px;
+    width: 100%;
+}
+div.table.show{
+    display: block;
+}
+td.attended{
+    background: #80C360;
+    color: white;
+    outline: 2px solid #53361D;
+}
+
+td.sick-note{
+    background: #EF9E24;
+    color: white;
+    outline: 2px solid #53361D;
+}
+
+td.unattended{
+    background: #FA5332;
+    color: white;
+    outline: 2px solid #53361D;
+}
+
+td.not-passed{
+    background: #C2C3C4;
+    color: white;
+    outline: 2px solid #53361D;
+}
+
+td.value{
+    cursor: pointer;
+}
+
+td.focus{
+    position: relative;
+    z-index: 2;
+    outline-color: white;
+}
+
+table{
+    position: relative;
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+th{
+    padding: 10px;
+    width: 60px;
+    color: white;
+}
+
+td{
+    padding: 8px;
+}
+
+ul.status{
+    background: white;
+    position: absolute;
+    color: #5A3617;
+    width: 400px;
+}
+
+ul.status li:hover{
+    background: #DAD4CD;
+}
+div.preloader{
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+div.loader.show{
+    display: block;
+}
+div.loader{
+    display: none;
+    width: 65px;
+    height: 65px;
+    border: 11px solid white;
+    border-top-color: #568B3F;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 5;
+    transform: translate(-50%, -50%);
+    animation: 2s Wait infinite linear;
+}
+@keyframes Wait {
+    from{
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to{
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+img.next-month.wait, img.last-month.wait, div.group-list ul.wait{
+    cursor: wait;
+}
+div#wrapper{
+    display: flex;
+    flex-direction: column;
+}
+.color{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: 2px solid #53361D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.color img{
+    width: 40px;
+}
+section{
+    width: 0;
+    margin: 0;
+}
+.arrow{
+    border: 7px solid rgba(255,255,255,0.5);
+    border-bottom: none;
+    border-left: none;
+    display: block;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+.arrow:hover{
+    border-color: white;
+}
+.arrow-left{
+    float: left;
+    transform: rotate(-135deg) translateY(20px) translateX(-20px);
+    transition: border-color 0.4s ease;
+}
+.arrow-right{
+    float: right;
+    transform: rotate(45deg) translateY(20px) translateX(-20px);
+    transition: border-color 0.4s ease;
+}
+.arrow.wait{
+    cursor: wait;
+}
+.map{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 50px);
+}
+.map span{
+    display: block;
+    text-align: center;
+    font-family: Items;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 10px 15px;
+    color: #48280C;
+    line-height: 1.9rem;
+    font-size: 1.3rem;
+    transition: transform 0.4s ease-in-out;
+}
+.map li{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.map li:hover span{
+    transform: scale(1.2);
+}
+.map li:nth-child(1) .color, .rules li:nth-child(1){
+    background: #C0D0AA;
+}
+.map li:nth-child(2) .color, .rules li:nth-child(2){
+    background: #80C360;
+}
+.map li:nth-child(3) .color, .rules li:nth-child(3){
+    background: #EF9E24;
+}
+.map li:nth-child(4) .color, .rules li:nth-child(4){
+    background: #FA5332;
+}
+.rules ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+.rules li{
+    min-width: 100px;
+    min-height: 100px;
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.rules span{
+    font-size: 1.3rem;
+    color: white;
+}
+html, body{
+    overflow-y: auto;
+    background: none;
+}
+div#wrapper{
+    background: url('../images/pa_backgrounds/36.jpg') no-repeat bottom center;
+    background-size: cover;
+}
