@@ -1,0 +1,55 @@
+{% extends "personal_account.html" %}
+
+{% block css_style %}
+    {{ super() }}
+    <link href="{{url_for('static', filename='css/student.css')}}?v=17" rel="stylesheet" type="text/css"/>
+    {% block unic_css %}
+        <link href="{{url_for('static', filename='css/slider.css')}}?v=2" rel="stylesheet" type="text/css"/>
+        <link href="{{url_for('static', filename='css/pa_slider.css')}}?v=2" rel="stylesheet" type="text/css"/>
+    {% endblock %}
+{% endblock %}
+
+{% block menu %}
+    {{ super() }}
+    <li class="messages_s"><a href="/messages_s">Сообщения<!--<div class="ribbon">+ 1</div>--></a></li>
+    <li class="visits_s"><a href="/visits_s">Посещения</a></li>
+    <li class="homework_s"><a href="/homework_s">Домашние задания</a></li>
+    <li class="payments_s"><a href="/payments_s">Оплаты</a></li>
+{% endblock %}
+
+{% block main%}
+    {{ super() }}
+    <slider id="pa-slider">
+        <div class="slides-container">
+            <slide><a href="/messages_s">
+                <p>Сообщения<br>У Вас есть вопрос?<br>Задайте его нам!</p>
+            </a></slide>
+            <slide><a href="/visits_s">
+                <p>Посещения</p>
+            </a></slide>
+            <slide><a href="/homework_s">
+                <p>Домашние задания</p>
+            </a></slide>
+            <slide><a href="/payments_s">
+                <p>Оплаты</p>
+            </a></slide>
+        </div>
+        <div class="dots-wrapper">
+            <ul class="dots-container">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </slider>
+{% endblock %}
+
+{% block js_func %}
+    {% block unic_js %}
+        <script type="text/javascript" src="{{url_for('static', filename='js/slider.js')}}?v=11" ></script>
+        <script type="text/javascript" src="{{url_for('static', filename='js/speedup_s.js')}}?v=3" ></script>
+    {% endblock %}
+    <script type="text/javascript" src="{{url_for('static', filename='js/student.js')}}?v=14" ></script>
+    {{ super() }}
+{% endblock %}

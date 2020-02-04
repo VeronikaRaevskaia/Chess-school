@@ -1,0 +1,47 @@
+{% extends "header_menu.html" %}
+
+{% block css_style %}
+{{ super() }}
+    <link href="{{url_for('static', filename='css/menu.css')}}?v=9" rel="stylesheet" type="text/css"/>
+    <link href="{{url_for('static', filename='css/log_in.css')}}?v=6" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block content %}
+<main>
+    <div class="form">
+        <div class="log-in show">
+            <form name="log_in">
+                <div class="input-box">
+                    <label>Логин</label>
+                    <input type="text" autocomplete="on" name="login">
+                </div>
+               <div class="input-box">
+                   <label>Пароль</label>
+                   <input type="password" autocomplete="on" name="password">
+               </div>
+                <input type="button" value="Войти" name="enter">
+                <label id="forget">Я забыл пароль!</label>
+                <label id="case">Логин и пароль выдаются при подписании договора</label>
+                <label>{{ error }}</label>
+            </form>
+        </div>
+        <div class="reset-password">
+            <form name="reset-password">
+                <div class="input-box">
+                    <label>E-mail:</label>
+                    <input type="text" autocomplete="on" name="email">
+                </div>
+                <input type="button" value="Отправить" name="send">
+                <label id="remember">Я знаю пароль!</label>
+                <label id="answer"></label>
+            </form>
+        </div>
+    </div>
+</main>
+<canvas style="display: block"></canvas>
+{% endblock %}
+
+{% block js_func %}
+{{ super() }}
+<script type="text/javascript" src="{{url_for('static', filename='js/log_in.js')}}?v=2" ></script>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "admin.html" %}
+
+{% block css_style %}
+{{ super() }}
+    <link href="{{url_for('static', filename='css/acquiring_a.css')}}?v=12" rel="stylesheet" type="text/css"/>
+    {% block unic_css %}
+    {% endblock %}
+{% endblock %}
+
+
+{% block content %}
+<section class="space"></section>
+<section class="right">
+    <article>
+        <ul class="acquring-name">
+            <li class="title">Имя студента</li>
+            {% for payment in acquring_payments %}
+            <li>{{ payment[0] }}</li>
+            {% endfor %}
+        </ul>
+        <ul class="acquring-payment">
+            <li class="title">Сумма</li>
+            {% for payment in acquring_payments %}
+            <li>{{ payment[1] }}</li>
+            {% endfor %}
+        </ul>
+        <ul class="acquring-date">
+            <li class="title">Дата</li>
+            {% for payment in acquring_payments %}
+            <li>{{ payment[2] }}</li>
+            {% endfor %}
+        </ul>
+    </article>
+    <div id="more">Загрузить еще</div>
+</section>
+{% endblock %}
+
+{% block js_func %}
+{{ super() }}
+    <script type="text/javascript" src="{{url_for('static', filename='js/acquiring_a.js')}}?v=10" ></script>
+    {% block unic_js %}
+    {% endblock %}
+{% endblock %}

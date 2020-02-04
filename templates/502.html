@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block css_style %}
+{{ super() }}
+    <link href="{{url_for('static', filename='css/error.css')}}?v=4" rel="stylesheet" type="text/css"/>
+    <link href="{{url_for('static', filename='css/error_full.css')}}?v=2" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block content %}
+<div class="message">
+    <h1>Сбербанк временно не может предоставить возможность онлайн-оплаты</h1><br>
+    <h2>Мы возобновим работу в ближайшее время. Спасибо за понимание.
+    </h2>
+    <img src="../static/images/error/sberbank.png">
+    <a href="/personal_account" class="return">Вернуться в личный кабинет</a>
+</div>
+<script>
+   /* document.querySelector('a.return').onclick = function () {
+        var form = document.querySelector('form[name=obj_form]');
+        form.method = 'post';
+        form.action = '/personal_account';
+        form.submit();
+    }*/
+</script>
+{% endblock %}

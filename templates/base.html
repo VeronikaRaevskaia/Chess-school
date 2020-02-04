@@ -1,0 +1,105 @@
+<!DOCTYPE html> <!Используем версию html5>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-barstyle" content="black-translucent">
+    <link rel="apple-touch-icon" href="icon-152.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="shortcut icon" sizes="196x196" href="icon-196.png">
+    <title>Шахматная школа</title>
+    {% block css_style %}
+    <link rel="shortcut icon" href="{{url_for('static', filename='icons/favicon.ico')}}" type="image/x-icon" />
+    <link rel="icon" href="{{url_for('static', filename='icons/favicon.ico')}}" type="image/x-icon" />
+    <link href="{{url_for('static', filename='css/base.css')}}?v=8" rel="stylesheet" type="text/css"/>
+    <link href="{{url_for('static', filename='css/fonts.css')}}?v=1" rel="stylesheet" type="text/css"/>
+    {% endblock %}
+</head>
+
+<body>
+<header id="header">
+    {% block header %}
+    {% endblock %}
+</header>
+
+
+<div class="payment-menu">
+    {% block left_sidebar %}
+    {% endblock %}
+</div>
+<div id="wrapper">
+    <main>
+        <div class="sidebar">
+            <sidebar class="up">
+                <a href="#header" id="up"></a>
+            </sidebar>
+            {% block sidebar %}
+            {% endblock %}
+        </div>
+        <form name="obj_form">
+            <input type="text"/>
+        </form>
+        {% block content %}
+            {% block svg_block %}
+                <svg><symbol viewBox="0 0 1242.7159 915.29117" id="menu-svg" version="1.1"><path d="m 70.049098,913.14443 c -25.0312,
+                -5.2875 -49.116629,-23.8277 -60.378809,-46.4778 -7.79694,-15.68087 -8.95671001,-21.04927 -8.92936001,-41.33327 0.0227,
+                -16.8353 0.37316001,-19.6261 3.57228001,-28.4461 9.5803,-26.4131 27.96165,-44.9952 54.705019,-55.3025 l 11.03087,
+                -4.2514 H 621.38245 1172.7158 l 11.0308,4.2514 c 26.7434,10.3073 45.1248,28.8894 54.705,55.3025 3.1992,8.82 3.5496,
+                11.6108 3.5723,28.4461 0.02,14.7616 -0.4954,20.2008 -2.4632,26 -8.6413,25.46647 -24.283,43.71517 -46.8449,54.65267 -21.0346,
+                10.1971 30.8362,9.3598 -572.27715,9.2386 -472.08381,-0.095 -542.246002,-0.36 -550.389552,-2.0802 z m -6.00352,
+                -370.25007 c -29.379699,-8.7012 -52.420239,-31.8956 -60.954889,-61.36191 -3.67612001,-12.692 -4.14099,-33.29926 -1.02834,
+                -45.58566 3.43046,-13.54088 11.99815,-29.2022 21.46576,-39.23836 14.660769,-15.5412 31.649979,-24.58396 52.520989,
+                -27.95509 12.13968,-1.96084 1078.527002,-1.96084 1090.666702,0 29.1719,4.71192 54.1104,22.759 66.5434,48.15508 7.2682,
+                14.84615 9.4566,24.23099 9.4566,40.55397 0,40.06172 -25.8183,74.30157 -64.4676,85.49597 l -10.5012,3.0416 -546.84895,
+                -0.071 -546.848952,-0.071 z m 6.00352,-367.08329 C 43.860248,170.27904 19.651769,151.016 8.062619,126.48753 1.636079,
+                112.88573 -0.29993101,102.36692 0.36539899,84.66667 1.282249,60.27507 8.700329,42.88442 25.382429,26.01778 35.775339,
+                15.5099 46.373448,8.83763 60.728558,3.76484 L 71.382428,0 H 621.38245 1171.3824 l 10.6539,3.76484 c 14.3551,5.07279
+                24.9532,11.74506 35.3461,22.25294 16.6821,16.86664 24.1002,34.25729 25.0171,58.64889 0.6653,17.70025 -1.2707,28.21906
+                -7.6973,41.82086 -8.6473,18.30214 -23.4957,33.21559 -41.9864,42.17043 -21.0436,10.19113 30.8104,9.35451 -572.27715,9.23333
+                -472.08381,-0.0948 -542.246002,-0.36002 -550.389552,-2.08022 z"/></symbol></svg>
+            {% endblock %}
+        {% endblock %}
+    </main>
+</div>
+
+
+{% block footer %}
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function() {
+                try {
+                    w.yaCounter38445565 = new Ya.Metrika({
+                        id:38445565,
+                        clickmap:true,
+                        trackLinks:true,
+                        accurateTrackBounce:true
+                    });
+                } catch(e) { }
+            });
+
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () { n.parentNode.insertBefore(s, n); };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else { f(); }
+        })(document, window, "yandex_metrika_callbacks");
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/38445565" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+{% endblock %}
+
+{% block js_func %}
+<script type="text/javascript" src="{{url_for('static', filename='js/base.js')}}?v=4" ></script>
+{% endblock %}
+</body>
+</html>
+
+
+

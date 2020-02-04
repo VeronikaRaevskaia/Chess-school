@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block css_style %}
+    {{ super() }}
+    <link href="{{url_for('static', filename='css/personal_account.css')}}?v=17" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+
+{% block header %}
+    <div class="bg-modal exit">
+        <div class="model-content">
+            <p><button class="close">&times;</button></p>
+            <span class="sign">&#9813</span>
+            <span>Вы действительно хотите выйти?</span>
+            <div class="buttons-exit">
+                <button class="yes">Да</button>
+                <button class="no">Нет</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-modal settings">
+        <div class="model-content">
+            <button class="close">&times;</button>
+            <form name="change-password">
+                <div class="input-box">
+                    <label>Старый пароль</label>
+                    <input type="text" autocomplete="on" name="old_password">
+                </div>
+                <div class="input-box">
+                    <label>Новый пароль</label>
+                    <input type="text" autocomplete="on" name="new_password">
+                </div>
+                <input type="button" value="Сохранить" name="change">
+                <label class="new-password">Подождите, идет сохранение ...</label>
+            </form>
+        </div>
+    </div>
+    <nav id="pa-menu">
+        <ul class="name">
+            <li class="img"></li>
+            <li class="name">{{ name }}</li>
+        </ul>
+        <span class="mobile-menu"></span>
+        <ul class="exit-block">
+            <li class="balance">
+                <aside class="hover"><a href="/payments_s">К оплате: {{ sum_to_pay }}р</a></aside>
+                <aside class="hidden">Сумма, которую необходимо внести за обучение с учетом авансовой системы оплаты</aside>
+            </li>
+            <li class="exit"></li>
+        </ul>
+        <ul class="actions">
+            {% block menu %}
+            {% endblock %}
+        </ul>
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <main>
+        {% block main %}
+        {% endblock %}
+    </main>
+{% endblock %}
+
+{% block js_func %}
+    {{ super() }}
+    <script type="text/javascript" src="{{url_for('static', filename='js/personal_account.js')}}?v=16" ></script>
+{% endblock %}

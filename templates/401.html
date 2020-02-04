@@ -1,0 +1,15 @@
+{% extends "header_full.html" %}
+
+{% block css_style %}
+   {{ super() }}
+    <link href="{{url_for('static', filename='css/menu.css')}}?v=9" rel="stylesheet" type="text/css"/>
+   <link href="{{url_for('static', filename='css/error.css')}}?v=4" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block content %}
+   <div class="message">
+      <h1>Ошибка 401</h1><br>
+      <h2>Проблема с авторизацией. Возможно, сайт временно недоступен по данному адресу по техническим причинам, или вы ввели неправильный адрес в строке.
+         Проверьте корректность ввода. В случае неудачи приносим свои извинения. Сайт будет доступен в ближайшее время. </h2>
+   </div>
+{% endblock %}

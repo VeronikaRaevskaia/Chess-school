@@ -1,0 +1,19 @@
+{% extends "header_full.html" %}
+
+{% block css_style %}
+    {{ super() }}
+    <link href="{{url_for('static', filename='css/menu.css')}}?v=9" rel="stylesheet" type="text/css"/>
+    <link href="{{url_for('static', filename='css/error.css')}}?v=4" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block content %}
+<div class="message">
+    <h1>Ой-ой..</h1><br>
+    <h2>Вы оказались здесь по нашей вине :(( <br>
+        Нам очень-очень жаль.. <br>
+        Если Вам нетрудно, то сообщите об ошибке по электронной почте.. chessperm@yandex.ru <br>
+        Мы будем Вам бесконечно признательны и постараемся всё исправить в кратчайшие сроки!
+    </h2><br>
+    <img src="../static/images/error/500.png">
+</div>
+{% endblock %}

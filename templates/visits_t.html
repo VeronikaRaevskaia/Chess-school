@@ -1,0 +1,87 @@
+{% extends "teacher.html" %}
+
+{% block css_style %}
+{{ super() }}
+    <link href="{{url_for('static', filename='css/visits.css')}}?v=13" rel="stylesheet" type="text/css"/>
+    <link href="{{url_for('static', filename='css/visits_t.css')}}?v=12" rel="stylesheet" type="text/css"/>
+    {% block unic_css %}
+    {% endblock %}
+{% endblock %}
+
+
+{% block content %}
+<section class="main-info">
+        <div class="group-list">
+            <ul class="group-list">
+                <li>Группа:</li>
+                {% for class in classes %}
+                <li class="group">{{ class }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="date">
+            <ul>
+                <li class="arrow arrow-left"></li>
+                <li class="data"><span class="month"></span><span class="year"></span></li>
+                <li class="arrow arrow-right"></li>
+            </ul>
+        </div>
+        <div class="preloader">
+            <div class="loader"></div>
+            <div class="table">
+                <table>
+                    <thead>
+                    <tr>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div class="buttons-atd">
+                    <div class="content">
+                        <div class="cancel button">Отмена</div>
+                        <div class="save button">Сохранить</div>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="preload-image show">
+                <aside>
+                    <span>Выберите группу</span>
+                    <img src="../static/icons/preload_image.svg">
+                </aside>
+            </div>
+        </div>
+</section>
+<section class="space"></section>
+<section class="dop-info">
+    <ul class="map">
+        <li>
+            <span class="color"></span>
+            <span>День занятий</span>
+        </li>
+        <li>
+            <span class="color"></span>
+            <span>Занятие посещено</span>
+        </li>
+        <li>
+            <span class="color"></span>
+            <span>Пропуск по уважительной причине</span>
+        </li>
+        <li>
+            <span class="color"></span>
+            <span>Пропуск без уважительной причины</span>
+        </li>
+    </ul>
+</section>
+
+{% endblock %}
+
+{% block js_func %}
+{{ super() }}
+    <script type="text/javascript" src="{{url_for('static', filename='js/visits.js')}}?v=10" ></script>
+    <script type="text/javascript" src="{{url_for('static', filename='js/visits_t.js')}}?v=11" ></script>
+    {% block unic_js %}
+    {% endblock %}
+{% endblock %}

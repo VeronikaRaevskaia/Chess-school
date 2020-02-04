@@ -1,0 +1,132 @@
+{% extends "student.html" %}
+
+
+{% block css_style %}
+{{ super() }}
+    <link href="{{url_for('static', filename='css/payments.css')}}?v=13" rel="stylesheet" type="text/css"/>
+    <link href="{{url_for('static', filename='css/payments_s.css')}}?v=18" rel="stylesheet" type="text/css"/>
+    {% block unic_css %}
+    {% endblock %}
+{% endblock %}
+
+{% block content %}
+<section class="left">
+    <ul>
+        <li class="payment-icon history">
+            <img src="../static/icons/history_payments.png">
+            <span>История оплат</span>
+        </li>
+        <li class="payment-icon new">
+            <img src="../static/icons/new_payment.png" class="payment-icon">
+            <span>Новая оплата</span>
+        </li>
+        <li class="payment-icon security">
+            <img src="../static/icons/secure_payment.png" class="payment-icon">
+            <span>Безопасность платежа</span>
+        </li>
+    </ul>
+</section>
+
+<section class="space">
+    <div class="bg-modal statistics">
+        <div class="model-content">
+            <button class="close">&times;</button>
+            <section>
+                <ul class="titles">
+                    <li class="month">Месяц:</li>
+                    <li class="total">Всего:</li>
+                    <li class="attended">Посещения:</li>
+                    <li class="spravka">Пропуски по уважительной причине:</li>
+                    <li class="unattended">Пропуски без уважительной причины:</li>
+                    <li class="sum-to-pay">Сумма к оплате:</li>
+                </ul>
+                <ul class="values">
+                    <li class="month"></li>
+                    <li class="total"></li>
+                    <li class="attended"></li>
+                    <li class="spravka"></li>
+                    <li class="unattended"></li>
+                    <li class="sum-to-pay"></li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    <div class="bg-modal history">
+        <div class="model-content">
+            <button class="close">&times;</button>
+            <div class="all-payments">
+                <ul class="sum">
+                    {% for payment in payments %}
+                    <li>{{ payment[1] }}</li>
+                    {% endfor %}
+                </ul>
+                <ul class="date">
+                    {% for payment in payments %}
+                    <li>{{ payment[0] }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="bg-modal new">
+        <div class="model-content">
+            <button class="close">&times;</button>
+            <form name="new-payment">
+                <div>
+                    <label><aside class="hover">Рекомендованная сумма:</aside>
+                        <aside class="hidden">Рекомендованная сумма - это минимальная сумма, которая должна быть оплачена.
+                            Она расчитывается с учетом авансовой системы оплаты.</aside>
+                    </label>
+                    <input type="number" name="recomend" id="recomend" value="{{ recommended_sum }}" disabled>
+                </div>
+                <div>
+                    <label>Сумма к оплате:</label><input type="number" {% if has_penalty %} min={{recommended_sum}} {% endif %} name="sum" id="sum" value="{{ recommended_sum }}" pattern="^[1-9][0-9]+[,.]?[0-9]{0,2}" title="Заполните поле">
+                </div>
+            </form>
+            <span class="penalty-{{ has_penalty }}">*В связи с несвоевременной оплатой, начислена штрафная неустойка. <br>
+                Сейчас Вы не можете заплатить сумму меньше указанной</span>
+            <div class="pay-button">Оплатить</div>
+        </div>
+    </div>
+    <div class="bg-modal security">
+        <div class="model-content">
+            <button class="close">&times;</button>
+            <p>На нашем сайте Вы не вводите никакие данные, содержащие конфиденциальную информацию. Необходимо указать только сумму, которую хотите заплатить, после
+                чего Вы попадете на адрес Платежного шлюза Сбербанка <strong>(https://securepayments.sberbank.ru/)</strong>....<br><br>
+                Ввод данных банковской карты происходит лишь на странице Платежного шлюза. Эта информация недоступна ни нам, ни третьим лицам.<br><br>
+                Верификация Вашей карты и безопасность Ваших средств гарантируется системой Сбербанка.<br><br>
+                После успешной обработки транзакции, Вы вернетесь на наш сайт, где мы оповестим Вас о статусе Вашего платежа.</p>
+            <img src="../static/images/error/sberbank.png" class="banner">
+        </div>
+    </div>
+    <div class="bg-modal payment-status {{ status_class }}">
+        <div class="model-content">
+            <button class="close">&times;</button>
+            <span class="result">{{ payment_status }}</span>
+            <img src="../static/icons/{{ status_img }}.png" class="result-img">
+        </div>
+    </div>
+</section>
+
+<section class="right">
+    <ul class="months">
+        <li><button>Сентябрь</button></li>
+        <li><button>Октябрь</button></li>
+        <li><button>Ноябрь</button></li>
+        <li><button>Декабрь</button></li>
+        <li><button>Январь</button></li>
+        <li><button>Февраль</button></li>
+        <li><button>Март</button></li>
+        <li><button>Апрель</button></li>
+        <li><button>Май</button></li>
+    </ul>
+</section>
+{% endblock %}
+
+
+{% block js_func %}
+    {{ super() }}
+    <script type="text/javascript" src="{{url_for('static', filename='js/payments_s.js')}}?v=18" ></script>
+    {% block unic_js %}
+    {% endblock %}
+{% endblock %}

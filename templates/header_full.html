@@ -1,0 +1,110 @@
+{% extends "header_menu.html" %}
+
+{% block css_style %}
+    {{ super() }}
+    <link href="{{url_for('static', filename='css/header_full.css')}}?v=20" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+
+
+{% block header %}
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ title }}</h1>
+    <div class="bg-modal pay">
+        <div class="model-content">
+            <div class="pay"></div>
+            <p><button class="close">&times;</button>
+                <strong>Теперь оплата наших занятий стала намного удобнее!</strong><br><br>
+                Вы можете заплатить онлайн в личном кабинете при помощи Вашей банковской карты.<br><br>
+                Обращаем Ваше внимание на то, что возврат средств может быть произведен только в оффлайн-режиме.<br><br>
+                Юр. адрес: 614016, г.Пермь, ул.Куйбышева, 54<br>
+                ИНН: 5905026580<br>
+                ОГРН: 1155958015421<br>
+                БИК: 042202603<br>
+                Р/c: №40702810849770001241<br><br>
+                <strong><a href="/payment_info">Подробнее о способах оплаты</a></strong>
+            </p>
+        </div>
+    </div>
+    <div class="bg-modal license">
+        <div class="model-content">
+            <div class="license"></div>
+            <img src="../static/images/news/license_1.jpg">
+            <img src="../static/images/news/license_2.jpg">
+            <p><button class="close">&times;</button>
+                <strong>Лицензия на образовательную деяельность</strong><br><br>
+                Благодаря лицензии вы можете снизить финансовую нагрузку на обучение детей, посредством налогового вычета
+                в размере 13%. В дальнейшем мы надеемся на получение финансирования для организации бюджетных мест
+                для одаренных детей.<br>
+            </p>
+        </div>
+    </div>
+    <div class="bg-modal new">
+        <div class="model-content">
+            <div class="new"></div>
+            <p><button class="close">&times;</button></p>
+        </div>
+    </div>
+    <div class="bg-modal new-img">
+        <div class="model-content">
+            <div class="new-img"></div>
+            <button class="close">&times;</button>
+            <img src="">
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {{ super() }}
+    <section class="line"></section>
+    <footer>
+        <aside>
+            <ul>
+                <h4>Контакты</h4>
+                <li>614000 г.Пермь</li>
+                <li>ул. Куйбышева 54,</li>
+                <li>ул. Боровая 32</li>
+                <li class="our-numbers">Тел: <span class="no-wrap">239-30-06 </span>, <span class="no-wrap"> 8(902)632-42-93</span></li>
+                <li>E-mail: chessperm@yandex.ru</li>
+            </ul>
+            <ul>
+                <h4>Время работы</h4>
+                <li>Вторник-Воскресенье</li>
+                <li>9:00 - 20:00</li>
+            </ul>
+            <ul class="media">
+                <h4>Социальные сети</h4>
+                <div>
+                    <li class="vkontekte"><a href="https://vk.com/chessschool59" target="_blank"></a></li>
+                    <li class="instagram"><a href="https://www.instagram.com/chessschool159/" target="_blank"></a></li>
+                    <li class="youtube"><a href="https://www.youtube.com/channel/UCiTDxF0Ab3rMLdGYFFejWrw/featured?disable_polymer=1" target="_blank"></a></li>
+                </div>
+            </ul>
+        </aside>
+        <hr>
+        <aside class="down">
+            <ul class="links">
+                <li class="department" title="Минестерство физической культуры, спорта и туризма Пермского края"></li>
+                <li class="fediration" title="Российская Шахматная Федерация"></li>
+            </ul>
+            <ul>
+                <li><p>Все материалы являются авторскими, любое использование разрешено только с письменного согласия администрации сайта www.шахматыпермь.рф<br><br>
+                    Посещая страницы Сайта, заполняя формы ввода данных, пользователь выражает своё согласие с <a class="secure" target="_blank" href="/documents/privacypolicy.pdf">Политикой конфиденциальности</a>.</p></li><br>
+                <li>© 2016 - 2019</li>
+                <li>ШАХМАТНАЯ ШКОЛА </li>
+            </ul>
+            <div class="sber-block">
+                <img class="sber hover" src="../static/images/base/cards.png">
+                <span class="hidden">Занятия могут быть оплачены онлайн</span>
+            </div>
+        </aside>
+    </footer>
+{% endblock %}
+
+{% block js_func %}
+    {{ super() }}
+    <script type="text/javascript" src="{{url_for('static', filename='js/header_full.js')}}?v=5" ></script>
+{% endblock %}

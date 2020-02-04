@@ -1,0 +1,200 @@
+{% extends "teacher.html" %}
+
+{% block css_style %}
+{{ super() }}
+    <link href="{{url_for('static', filename='css/information_table.css')}}?v=5" rel="stylesheet" type="text/css"/>
+    <link href="{{url_for('static', filename='css/information_window.css')}}?v=5" rel="stylesheet" type="text/css"/>
+    <link href="{{url_for('static', filename='css/personal_data.css')}}?v=15" rel="stylesheet" type="text/css"/>
+    {% block unic_css %}
+    {% endblock %}
+{% endblock %}
+
+
+{% block content %}
+<section class="teacher">
+    <div class="personal-data">
+        <ul class="number">
+            <li class="title"><span>№</span></li>
+            {% for pd in personal_data %}
+            <li>{{ loop.index }}</li>
+            {% endfor %}
+        </ul>
+        <ul class="name">
+            <li class="title" style="font-weight: normal"><span>Имя</span></li>
+            {% for pd in personal_data %}
+            <li>{{ pd['name'] }}</li>
+            {% endfor %}
+        </ul>
+        <ul class="phone">
+            <li class="title"><span>Номер<br>телефона</span></li>
+            {% for pd in personal_data %}
+            <li>{{ pd['phone'] }}</li>
+            {% endfor %}
+        </ul>
+        <ul class="parent">
+            <li class="title"><span>Родитель</span></li>
+            {% for pd in personal_data %}
+            <li>{{ pd['parent'] }}</li>
+            {% endfor %}
+        </ul>
+        <ul class="recommended-sum">
+            <li class="title"><span>Сумма к<br>оплате</span></li>
+            {% for pd in personal_data %}
+            <li>{{ pd['recommended_sum'] }}</li>
+            {% endfor %}
+        </ul>
+        <ul class="birthday">
+            <li class="title"><span>Дата<br>рождения</span></li>
+            {% for pd in personal_data %}
+            <li>{{ pd['birthday'] }}</li>
+            {% endfor %}
+        </ul>
+        <ul class="entry">
+            <li class="title"><span>Дата<br>поступления</span></li>
+            {% for pd in personal_data %}
+            <li>
+                <input type="text" value="{{ pd['entry_date'] }}" placeholder="Ожидание" disabled>
+            </li>
+            {% endfor %}
+        </ul>
+        <ul class="price">
+            <li class="title"><span>Стоимость</span></li>
+            {% for pd in personal_data %}
+            <li>
+                <input type="text" value="{{ pd['usual_price'] }}" placeholder="Ожидание" disabled>
+            </li>
+            {% endfor %}
+        </ul>
+        <ul class="penalty-checkbox">
+            <li class="title"><span>Штраф</span></li>
+            {% for pd in personal_data %}
+                <li><input type="checkbox" {{ "checked" if pd['penalty'] }} disabled></li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+
+<div class="bg-modal personal-statistics">
+    <div class="model-content">
+        <button class="close">&times;</button>
+        <section>
+            <article id="calendar">
+                <div class="statistics-content"></div>
+                <div class="date">
+                    <ul>
+                        <li class="arrow arrow-left"></li>
+                        <li class="data"><span class="month"></span><span class="year"></span></li>
+                        <li class="arrow arrow-right"></li>
+                    </ul>
+                </div>
+                <div class="preloader">
+                    <div class="loader"></div>
+                    <div class="calendar">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Пн</th>
+                                <th>Вт</th>
+                                <th>Ср</th>
+                                <th>Чт</th>
+                                <th>Пт</th>
+                                <th>Сб</th>
+                                <th>Вс</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </article>
+            <article id="payment-history">
+                <span class="checked-student"></span>
+                <div class="all-payments">
+                    <ul class="sum"><li class="header">Сумма:</li></ul>
+                    <ul class="date"><li class="header">Дата:</li></ul>
+                </div>
+            </article>
+            <article id="penalty-details">
+                <span>Сумма к оплате:</span>
+                <ul>
+                    <li><span>За занятия:</span><span></span></li>
+                    <li><span>Штраф 10%:</span><span></span></li>
+                    <li><span>Итоговая сумма:</span><span></span></li>
+                </ul>
+            </article>
+        </section>
+    </div>
+</div>
+
+<div class="visits" style="display: none">
+    <ul class="days">
+    </ul>
+    <ul class="sick-note">
+    </ul>
+    <ul class="unattended">
+    </ul>
+</div>
+{% endblock %}
+
+{% block js_func %}
+{{ super() }}
+    <script type="text/javascript" src="{{url_for('static', filename='js/information_table.js')}}?v=3" ></script>
+    <script type="text/javascript" src="{{url_for('static', filename='js/information_window.js')}}?v=8" ></script>
+    {% block unic_js %}
+    {% endblock %}
+{% endblock %}

@@ -1,0 +1,172 @@
+{% extends "student.html" %}
+
+{% block css_style %}
+{{ super() }}
+    <link href="{{url_for('static', filename='css/visits.css')}}?v=13" rel="stylesheet" type="text/css"/>
+    <link href="{{url_for('static', filename='css/visits_s.css')}}?v=11" rel="stylesheet" type="text/css"/>
+    {% block unic_css %}
+    {% endblock %}
+{% endblock %}
+
+
+{% block content %}
+<section class="main-info">
+    <div class="main-info-content">
+    <div class="date">
+        <ul>
+            <li class="arrow arrow-left"></li>
+            <li class="data"><span class="month"></span><span class="year"></span></li>
+            <li class="arrow arrow-right"></li>
+        </ul>
+    </div>
+    <div class="preloader">
+        <div class="loader"></div>
+        <div class="calendar show">
+            <table>
+                <thead>
+                <tr>
+                    <th>Пн</th>
+                    <th>Вт</th>
+                    <th>Ср</th>
+                    <th>Чт</th>
+                    <th>Пт</th>
+                    <th>Сб</th>
+                    <th>Вс</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+        <aside id="dop">
+            <span class="more">Подробнее</span>
+            <span class="rules-header">Правила</span>
+        </aside>
+
+    <div class="bg-modal statistics">
+        <div class="model-content">
+            <button class="close">&times;</button>
+            <ul>
+                <li><span class="total"></span></li>
+                <li><span class="attended"></span></li>
+                <li><span class="sick_note"></span></li>
+                <li><span class="unattended"></span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="bg-modal rules">
+        <div class="model-content">
+            <button class="close">&times;</button>
+            <ul>
+                <li><span>День занятий</span></li>
+                <li><span>Занятие посещено</span></li>
+                <li><span>Пропуск по уважительной причине</span></li>
+                <li><span>Пропуск без уважительной причины</span></li>
+            </ul>
+        </div>
+    </div>
+    </div>
+</section>
+<section class="space"></section>
+<section class="dop-info">
+    <ul class="map">
+        <li>
+            <span class="color"></span>
+            <span>День занятий</span>
+        </li>
+        <li>
+            <span class="color"></span>
+            <span>Занятие посещено</span>
+        </li>
+        <li>
+            <span class="color"></span>
+            <span>Пропуск по уважительной причине</span>
+        </li>
+        <li>
+            <span class="color"></span>
+            <span>Пропуск без уважительной причины</span>
+        </li>
+    </ul>
+</section>
+
+        <div class="visits" style="display: none">
+            <ul class="days">
+                {% for i in attendance['total'] %}
+                <li>{{ i }}</li>
+                {% endfor %}
+            </ul>
+            <ul class="sick-note">
+                {% for i in attendance['spravka'] %}
+                <li>{{ i }}</li>
+                {% endfor %}
+            </ul>
+            <ul class="unattended">
+                {% for i in attendance['unattended'] %}
+                <li>{{ i }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+{% endblock %}
+
+{% block js_func %}
+    {{ super() }}
+    <script type="text/javascript" src="{{url_for('static', filename='js/visits.js')}}?v=10" ></script>
+    <script type="text/javascript" src="{{url_for('static', filename='js/visits_s.js')}}?v=10" ></script>
+    {% block unic_js %}
+    {% endblock %}
+{% endblock %}

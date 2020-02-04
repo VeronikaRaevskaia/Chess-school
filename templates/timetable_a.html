@@ -1,0 +1,155 @@
+{% extends "admin.html" %}
+
+{% block css_style %}
+    {{ super() }}
+    <link href="{{url_for('static', filename='css/information_table.css')}}?v=5" rel="stylesheet" type="text/css"/>
+    <link href="{{url_for('static', filename='css/timetable.css')}}?v=7" rel="stylesheet" type="text/css"/>
+    <link href="{{url_for('static', filename='css/sidebar_menu.css')}}?v=10" rel="stylesheet" type="text/css"/>
+    {% block unic_css %}
+    {% endblock %}
+{% endblock %}
+
+
+{% block content %}
+<section class="admin">
+    <div class="personal-data" id="personal-data">
+            {% for key, value in schedule.items() %}
+            <ul class="row">
+                <li class="time">{{key}}</li>
+
+                <ul class="column">
+                    {% for key_2, value_2 in value.items() %}
+                        {% for weekday in value_2['weekdays'] %}
+                            {% if(weekday == 'Понедельник') %}
+                            <li>{{ key_2 }}<br><i>({{value_2['teacher']}})</i></li>
+                            {% else %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+
+                <ul class="column">
+                    {% for key_2, value_2 in value.items() %}
+                        {% for weekday in value_2['weekdays'] %}
+                            {% if(weekday == 'Вторник') %}
+                            <li>{{ key_2 }}<br><i>({{value_2['teacher']}})</i></li>
+                            {% else %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+
+                <ul class="column">
+                    {% for key_2, value_2 in value.items() %}
+                        {% for weekday in value_2['weekdays'] %}
+                            {% if(weekday == 'Среда') %}
+                            <li>{{ key_2 }}<br><i>({{value_2['teacher']}})</i></li>
+                            {% else %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+
+                <ul class="column">
+                    {% for key_2, value_2 in value.items() %}
+                        {% for weekday in value_2['weekdays'] %}
+                            {% if(weekday == 'Четверг') %}
+                            <li>{{ key_2 }}<br><i>({{value_2['teacher']}})</i></li>
+                            {% else %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+
+                <ul class="column">
+                    {% for key_2, value_2 in value.items() %}
+                        {% for weekday in value_2['weekdays'] %}
+                            {% if(weekday == 'Пятница') %}
+                            <li>{{ key_2 }}<br><i>({{value_2['teacher']}})</i></li>
+                            {% else %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+
+                <ul class="column">
+                    {% for key_2, value_2 in value.items() %}
+                        {% for weekday in value_2['weekdays'] %}
+                            {% if(weekday == 'Суббота') %}
+                            <li>{{ key_2 }}<br><i>({{value_2['teacher']}})</i></li>
+                            {% else %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+
+                <ul class="column">
+                    {% for key_2, value_2 in value.items() %}
+                        {% for weekday in value_2['weekdays'] %}
+                            {% if(weekday == 'Воскресенье') %}
+                            <li>{{ key_2 }}<br><i>({{value_2['teacher']}})</i></li>
+                            {% else %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            </ul>
+            {% endfor %}
+
+    </div>
+    <div id="sidebar-menu">
+        <ul>
+            <li class="menu-block search">
+                <input placeholder="Поиск">
+            </li>
+            <li class="menu-block">
+                <span>Сортировать</span>
+                <ul class="sorting">
+                    <li class="checked no-sort">все занятия</li>
+                    <li class="individual-class">индивидуальные</li>
+                    <li class="group-class">групповые</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<div class="bg-modal by-groups">
+    <div class="model-content">
+        <button class="close">&times;</button>
+        <section>
+            <article>
+                <div class="date">
+                    <ul>
+                        <li class="data"><span class="month"></span><span class="year"></span></li>
+                    </ul>
+                </div>
+                <span class="checked-group"></span>
+                <span class="dop-info"></span>
+                <div class="preloader">
+                    <div class="loader"></div>
+                    <div class="each-group">
+                        <ul class="number">
+                            <li class="title">Номер</li>
+                        </ul>
+                        <ul class="name">
+                            <li class="title">Имя ученика</li>
+                        </ul>
+                        <ul class="payment-sum">
+                            <li class="title">Заплатил</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block js_func %}
+    {{ super() }}
+    <script type="text/javascript" src="{{url_for('static', filename='js/timetable.js')}}?v=1" ></script>
+    {% block unic_js %}
+    {% endblock %}
+{% endblock %}

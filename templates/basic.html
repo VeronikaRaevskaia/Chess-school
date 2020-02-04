@@ -1,0 +1,118 @@
+{% extends "header_full.html" %}
+
+{% block css_style %}
+{{ super() }}
+    <link href="{{url_for('static', filename='css/basic.css')}}?v=1" rel="stylesheet" type="text/css"/>
+    <link href="{{url_for('static', filename='css/slider.css')}}?v=2" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block content %}
+    {{ super() }}
+    <section>
+        <ul class="slider sl-1">
+            <li class="slide show"><div class="slide-1"></div></li>
+            <li class="slide"><div class="slide-2"></div></li>
+            <li class="slide"><div class="slide-3"></div></li>
+            <li class="slide"><div class="slide-4"></div></li>
+        </ul>
+    </section>
+    <!--<slider style="display: none">
+        <div class="slides-container">
+            <slide>
+                <img src="../static/images/basic_s2_1.jpg">
+                <p>1. Наш коллектив</p>
+                <p class="big-text">
+                    1. Мы неппппппппппппппппппппппп аррррррррры лыы аааааааааааааад ыооыр рырпыы ррро аав
+                </p>
+            </slide>
+            <slide>
+                <img src="../static/images/basic_s2_2.jpg">
+                <p>2. Все вместе</p>
+                <p class="big-text">
+                    2. Мы неппппппппппппппппппппппп аррррррррры лыы аааааааааааааад ыооыр рырпыы ррро аав
+                </p>
+            </slide>
+            <slide>
+                <img src="../static/images/sea.jpg">
+                <p>3. Море</p>
+                <p class="big-text">
+                    Мы неппппппппппппппппппппппп аррррррррры лыы аааааааааааааад ыооыр рырпыы ррро аав
+                </p>
+            </slide>
+        </div>
+        <div class="arrow-container">
+            <span class="arrow arrow-left"></span>
+            <span class="arrow arrow-right"></span>
+        </div>
+        <div class="dots-wrapper">
+            <ul class="dots-container">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </slider> -->
+    <section class="description">
+        <div class="slogan">ОТКРЫВАЯ ДЕТЯМ ДВЕРЬ В МИР ШАХМАТ, ВЫ</div>
+        <ul>
+            <li>Обеспечиваете ребенку возможность легкого поступления в лучшие школы города и гарантируете дальнейшее успешное обучение</li>
+            <li>Помогаете ребенку стать активной самостоятельной личностью, стремящейся к самопознанию и самореализации</li>
+            <li>Прививаете ребенку умение ориентироваться в нестабильных и переменчивых обстоятельствах жизни, не теряя направления к своей цели</li>
+        </ul>
+    </section>
+    <section>
+        <ul class="slider sl-2">
+            <li class="slide show"><div class="slide-1"></div></li>
+            <li class="slide"><div class="slide-2"></div></li>
+        </ul>
+    </section>
+    <section class="description">
+        <div class="slogan">НАШИ ЗАДАЧИ</div>
+        <ul>
+            <li>Воспитание спортсменов международного уровня</li>
+            <li>Развитие интеллекта</li>
+            <li>Формирование личности</li>
+        </ul>
+    </section>
+    <section class="achievements">
+        <div class="achievements-block">
+            <div class="achievements-text">
+                <h5>Достижения и результаты</h5>
+                <ul>
+                    <li>
+                        <div class="circle"><span class="number">7</span><span class="else">лет</span></div>
+                        <p>Школа основана в 2011 году, и за это время получены удивительные результаты</p>
+                    </li>
+                    <li class="middle">
+                        <div class="circle"><span class="number">80К</span><span class="else">партий</span></div>
+                        <p>Благодаря занятиям 3 раза в неделю наши ученики получают хорошую теоретическую и практическую базу</p>
+                    </li>
+                    <li class="middle">
+                        <div class="circle"><span class="number">30</span><span class="else">мастеров спорта</span></div>
+                        <p>10 международных мастеров, 1 гроссмейстер
+                            Высокие спортивные достижения - особая гордость наших тренеров</p>
+                    </li>
+                    <li>
+                        <div class="circle"><span class="number">9</span><span class="else">призеров</span></div>
+                        <p>российских и международных соревнований</p>
+                    </li>
+                </ul>
+                <aside class="button"><a href="/achievements">Все достижения</a></aside>
+            </div>
+            <img src="../static/images/basic/basic.jpg">
+        </div>
+    </section>
+    <!--<section> <img src="../static/images/basic_n2.png"></section>-->
+    <section class="description">
+        <div>ЛАГЕРЬ</div>
+        <p>В летнее время мы организуем отдых детей и родителей на чёрном море в городе Анапа. Уже который год нас гостеприимно встречает
+            этот курорт Краснодарского края. Здесь дети могут не только отдохнуть, но и серьезно повысить свой шахматный уровень.
+            Мы также устраиваем различные экскурсии в парки отдыха, дельфинарии. Здесь ребята занимаются не только шахматами, но и пляжными видами спорта
+            и растут прямо на глазах!</p>
+    </section>
+{% endblock %}
+
+{% block js_func %}
+{{ super() }}
+<script type="text/javascript" src="{{url_for('static', filename='js/slider.js')}}?v=1" ></script>
+{% endblock %}

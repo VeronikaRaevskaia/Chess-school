@@ -1,0 +1,54 @@
+{% extends "personal_account.html" %}
+
+{% block css_style %}
+{{ super() }}
+    <link href="{{url_for('static', filename='css/teacher.css')}}?v=15" rel="stylesheet" type="text/css"/>
+    {% block unic_css %}
+    <link href="{{url_for('static', filename='css/slider.css')}}?v=2" rel="stylesheet" type="text/css"/>
+    <link href="{{url_for('static', filename='css/pa_slider.css')}}?v=2" rel="stylesheet" type="text/css"/>
+    {% endblock %}
+{% endblock %}
+
+{% block menu %}
+{{ super() }}
+<li class="timetable_t"><a href="/timetable_t">Расписание</a></li>
+<li class="visits_t"><a href="/visits_t">Посещения</a></li>
+<li class="homework_t"><a href="/homework_t">Домашние задания</a></li>
+<li class="personal_data_t"><a href="/personal_data_t">Персональные данные</a></li>
+{% endblock %}
+
+{% block main%}
+{{ super() }}
+<slider id="pa-slider">
+    <div class="slides-container">
+        <slide><a href="/timetable_t">
+            <p>Расписание</p>
+        </a></slide>
+        <slide><a href="/visits_t">
+            <p>Посещения</p>
+        </a></slide>
+        <slide><a href="/visits_t">
+            <p>Домашние задания</p>
+        </a></slide>
+        <slide><a href="/personal_data_t">
+            <p>Персональные данные</p>
+        </a></slide>
+    </div>
+    <div class="dots-wrapper">
+        <ul class="dots-container">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</slider>
+{% endblock %}
+
+{% block js_func %}
+    {% block unic_js %}
+    <script type="text/javascript" src="{{url_for('static', filename='js/slider.js')}}?v=11" ></script>
+    {% endblock %}
+    {{ super() }}
+    <script type="text/javascript" src="{{url_for('static', filename='js/teacher.js')}}?v=12" ></script>
+{% endblock %}

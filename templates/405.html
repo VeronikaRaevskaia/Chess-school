@@ -1,0 +1,17 @@
+{% extends "header_full.html" %}
+
+{% block css_style %}
+    {{ super() }}
+    <link href="{{url_for('static', filename='css/menu.css')}}?v=9" rel="stylesheet" type="text/css"/>
+    <link href="{{url_for('static', filename='css/error.css')}}?v=4" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block content %}
+   <div class="message">
+      <h1>На эту страницу Вы явно угодили по ошибке</h1><br>
+      <h2>Минутка занудства, раз уж Вы здесь :) <br>
+          Вы отправляете GET запрос к API, обращение к которому возможно только при помощи POST запроса..<br>
+          Именно поэтому Вы сюда и попали. Закройте эту страничку и забудьте все это как сон zzzZZZ..<br><br>
+      </h2>
+   </div>
+{% endblock %}

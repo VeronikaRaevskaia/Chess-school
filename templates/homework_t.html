@@ -1,0 +1,97 @@
+{% extends "teacher.html" %}
+
+{% block css_style %}
+{{ super() }}
+    <link href="{{url_for('static', filename='css/homework.css')}}?v=6" rel="stylesheet" type="text/css"/>
+    {% block unic_css %}
+    {% endblock %}
+{% endblock %}
+
+
+{% block content %}
+<section class="left">
+        <div class="new-homework">
+            <h3>Новое домашнее задание</h3>
+            <div class="n-homework">
+                <ul class="new-homework-block">
+                    <li class="add-button">
+                        <label for="new-homework" class="add">+</label>
+                        <input type="file" name="file" style="display:none;" multiple id="new-homework" value="Выберите файлы">
+                    </li>
+                    <li>
+                        <div id="class-select" class="wrapper-dropdown"><span>Группа:</span>
+                            <ul class="dropdown">
+                                {% for class in classes %}
+                                <li class="group"><a href="#">{{ class }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div id="student-select" class="wrapper-dropdown"><span>Ученик:</span>
+                            <ul class="dropdown">
+                                {% for student in students %}
+                                <li class="student"><a href="#">{{ student }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="new-files"></ul>
+                <div class="buttons">
+                    <div class="button cancel">Очистить</div>
+                    <div class="button send">Отправить</div>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+</section>
+<section class="space"></section>
+<section class="right">
+        <ul class="empty-block">
+            <li class="empty-image">
+                <span>Нет домашних<br>заданий</span>
+                <img src="../static/icons/house.png">
+            </li>
+            <li class="formats show">
+                <span>Допустимые<br>форматы</span>
+                <ul class="formats-icons">
+                    <li><img src="../static/icons/doc.png">
+                        <img src="../static/icons/pdf.png"></li>
+                    <li><img src="../static/icons/jpg.png">
+                        <img src="../static/icons/png.png"></li>
+                </ul>
+            </li>
+            <li>
+                <span>Допустимый размер<br>файла 24Мб</span>
+                <img src="../static/icons/size.png">
+            </li>
+        </ul>
+        <div class="homeworks-block">
+                    {% if homeworks is defined and homeworks != None %}
+                    {% for homework in homeworks %}
+                    <ul class="homework">
+                        <li class="file-name"><span class="file-name">{{ homework['filename'] }}</span><span class="close-file">&times;</span></li>
+                        <li class="image"><img src="../static/icons/{{ homework['format'] }}.png"></li>
+                        <li>{{ homework['group'] }}</li>
+                        <li>{{ homework['student'] }}</li>
+                        <li>{{ homework['date'] }}</li>
+                        <li class="buttons-block">
+                            <button class="download"><a href="/uploads/" target="_blank">Скачать</a></button>
+                            <button class="delete">Удалить</button>
+                        </li>
+                    </ul>
+                    {% endfor %}
+                    {% else %}
+                    {% endif %}
+        </div>
+</section>
+{% endblock %}
+
+
+{% block js_func %}
+{{ super() }}
+    <script type="text/javascript" src="{{url_for('static', filename='js/homework.js')}}?v=3" ></script>
+    {% block unic_js %}
+    {% endblock %}
+{% endblock %}

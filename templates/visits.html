@@ -1,0 +1,27 @@
+{% extends "personal_account.html" %}
+
+{% block css_style %}
+{{ super() }}
+<link href="{{url_for('static', filename='css/teacher.css')}}?v=15" rel="stylesheet" type="text/css"/>
+<link href="{{url_for('static', filename='css/visits.css')}}?v=13" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block menu %}
+{{ super() }}
+{% endblock %}
+
+
+
+{% block content %}
+    {{ super() }}
+    {% block main %}
+        {{ super() }}
+        {% block attendance %}
+        {% endblock %}
+    {% endblock %}
+{% endblock %}
+
+{% block js_func %}
+{{ super() }}
+<script type="text/javascript" src="{{url_for('static', filename='js/teacher.js')}}?v=12" ></script>
+{% endblock %}

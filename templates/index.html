@@ -1,0 +1,1080 @@
+{% extends "header_full.html" %}
+
+{% block css_style %}
+    {{ super() }}
+    <link href="{{url_for('static', filename='css/index.css')}}?v=30" rel="stylesheet" type="text/css"/>
+    <link href="{{url_for('static', filename='css/menu.css')}}?v=9" rel="stylesheet" type="text/css"/>
+    <link href="{{url_for('static', filename='css/intro.css')}}?v=9" rel="stylesheet" type="text/css"/>
+    <link href="{{url_for('static', filename='css/news.css')}}?v=24" rel="stylesheet" type="text/css"/>
+    <link href="{{url_for('static', filename='css/competitions.css')}}?v=24" rel="stylesheet" type="text/css"/>
+    <link href="{{url_for('static', filename='css/teachers.css')}}?v=8" rel="stylesheet" type="text/css"/>
+    <link href="{{url_for('static', filename='css/schedule.css')}}?v=5" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block content %}
+{{ super() }}
+<section id="intro">
+    <div>
+        <div>
+            <article>
+                <div class="left">
+                    <div class="logo">
+                        <a href="/">
+                            <img src="../static/images/base/logo_small.png"/>
+                        </a>
+                    </div>
+                    <ul class="contacts-info">
+                        <li class="license">Лицензия на образовательную деятельность</li>
+                        <li>239-30-06</li>
+                        <li>8(902)632-42-93</li>
+                        <li> г. Пермь, ул. Куйбышева, 54</li>
+                        <li> ул. Боровая, 32</li>
+                    </ul>
+                </div>
+                <div class="middle">
+                    <ul class=rates>
+                        <li class="header">Программы</li>
+                        <li>Комплексное интеллектуальное развитие
+                            <span>Шахматы, логика, память, развивающие игры</span>
+                        </li>
+                        <li>Тренировочный этап</li>
+                        <li>Шахматы на английском</li>
+                        <li>Обучение по skype</li>
+                        <li>Индивидуальные занятия</li>
+                        <li>Повышение квалификации</li>
+                        <li class="details"><a href="/documents/prices.pdf" target="_blank"> Подробнее о программах и стоимости</a></li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <ul class=news>
+                        <li class="header">Новости</li>
+                        <li><a href="#news">Итоги январского этапа Кубка шахматной школы</a></li>
+                        <li><a href="#news">Поздравляем!</a></li>
+                        <li><a href="#news">Итоги Кубка школы</a></li>
+                    </ul>
+                    <ul class="media-networks">
+                        <li class="vkontekte"><a href="https://vk.com/chessschool59" target="_blank"></a></li>
+                        <li class="instagram"><a href="https://www.instagram.com/chessschool159/" target="_blank"></a></li>
+                        <li class="youtube"><a href="https://www.youtube.com/channel/UCiTDxF0Ab3rMLdGYFFejWrw/featured?disable_polymer=1" target="_blank"></a></li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </div>
+    <ul class="images-menu">
+        <li class="flipper">
+            <a href="#intro">
+                <div class="flip-container">
+                    <div class="front"></div>
+                    <div class="back">
+                        <svg><use href="#home-svg"></use></svg>
+                        <span>Главная</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li class="flipper">
+            <a href="#news">
+                <div class="flip-container">
+                    <div class="front"></div>
+                    <div class="back">
+                        <svg><use href="#news-svg"></use></svg>
+                        <span>Новости</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li class="flipper">
+            <a href="#competitions" class="student">
+                <div class="flip-container">
+                    <div class="front"></div>
+                    <div class="back">
+                        <svg><use href="#competitions-svg"></use></svg>
+                        <span>Соревнования</span>
+                    </div>
+                </div>
+            </a>
+            <a href="/documents/newcompetitions_v3.pdf" class="student" target="_blank">
+                <div class="flip-container">
+                    <div class="front"></div>
+                    <div class="back">
+                        <svg><use href="#competitions-svg"></use></svg>
+                        <span>Соревнования</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li class="flipper">
+            <a href="#teachers">
+                <div class="flip-container">
+                    <div class="front"></div>
+                    <div class="back">
+                        <svg><use href="#about-school-svg"></use></svg>
+                        <span>О школе</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li class="flipper">
+            <a href="#schedule">
+                <div class="flip-container">
+                    <div class="front"></div>
+                    <div class="back">
+                        <svg><use href="#schedule-svg"></use></svg>
+                        <span>График</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li class="flipper">
+            <a href="#admission">
+                <div class="flip-container">
+                    <div class="front"></div>
+                    <div class="back">
+                        <svg><use href="#admission-svg"></use></svg>
+                        <span>Поступление</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li class="flipper">
+            <a href="/log_in">
+                <div class="flip-container">
+                    <div class="front"></div>
+                    <div class="back">
+                        <svg><use href="#personal-account-svg"></use></svg>
+                        <span>Личный кабинет</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+    </ul>
+</section>
+
+<section class="line"></section>
+
+<section id="news">
+    <div>
+        <ul class="panel">
+            <li>
+                <slider>
+                    <div class="slides-container">
+                        <slide><img src="../static/images/news/administration.jpg" class="kv"></slide>
+                    </div>
+                </slider>
+                <div class="dots-block">
+                    <ul class="dots-container">
+                        <li class="active"></li>
+                    </ul>
+                </div>
+                <div class="text-block">
+                    <div class="text">
+                        <h3>Итоги январского этапа Кубка шахматной школы</h3>
+                        <p>26 января завершились все соревнования на Кубок школы по быстрым шахматам и определились победители в номинациях.<br>
+                            В абсолютном зачете победу разделили наши ветераны  <b>Валерий Алексеевич Вшивцев</b> и <b>Петр Олегович Смолин</b>.
+                                У юношей  победителями в своих возрастных группах стали <b>Кирилл Белослудцев</b>, <b>Петр Анисимов</b>,
+                                <b>Иван Старков</b>.<br>
+                                Серебряные медали у <b>Артемия Тиунова</b>, <b>Александра Кирьянова</b> и <b>Александра Лузина</b>.<br>
+                                Бронзовыми призерами стали  <b>Сергей Чудик</b> и  <b>Михаил Соснин</b>.<br>
+                                Кубки и золотые медали у девушек завоевали <b>Василиса Лавреньева</b> и <b>Дарья Паздникова</b>.
+                                Серебро у <b>Алисы Кропачевой</b> и <b>Полины Овчинниковой</b>. Бронза у <b>Веры Нагайцевой</b>.<br><br>
+                                1 февраля  стартует февральский этап  Кубок школы для младшего и среднего возраста ( 2009 г.р. и моложе),
+                                а 2 февраля для старшего возраста ( 2008 г.р. и старше).</p>
+                        <span>01.02.2019</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <slider>
+                    <div class="slides-container">
+                        <slide><img src="../static/images/news/27.12.19.jpg"></slide>
+                    </div>
+                </slider>
+                <div class="dots-block">
+                    <ul class="dots-container">
+                        <li class="active"></li>
+                    </ul>
+                </div>
+                <div class="text-block">
+                    <div class="text">
+                        <h3>Поздравлям!</h3>
+                        <p>Шахматная Школа поздравляет всех с Новым годом !<br>
+                            Пусть в грядущем году нас ждут новые спортивные успехи и покорение новых вершин!</p>
+                        <span>27.12.2019</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <slider>
+                    <div class="slides-container">
+                        <slide><img src="../static/images/news/23.12.19_1.jpg" class="kv"></slide>
+                        <slide><img src="../static/images/news/23.12.19_2.jpg" class="ver"></slide>
+                        <slide><img src="../static/images/news/23.12.19_3.jpg" class="kv"></slide>
+                    </div>
+                </slider>
+                <div class="dots-block">
+                    <ul class="dots-container">
+                        <li class="active"></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="text-block">
+                    <div class="text">
+                        <h3>Итоги Кубка школы</h3>
+                        <p>22 декабря завершился Кубок школы по быстрым шахматам и определились победители в номинациях.<br>
+                            В абсолютном зачете победил <b>Валерий Алексеевич Вшивцев</b>, он же первенствовал в номинации ветеранов. У юношей
+                            победителями в своих возрастных группах стали <b>Кирилл Белослудцев, Егор Соромотин, Юрий Шевелев, Егор Тарасов,
+                                Кирил Рябов</b>. Лучшая среди девушек - <b>Полина Овчинникова</b>.
+                            Победители и призеры награждены Кубками, медалями, дипломами,подарками.
+                            3 января стартует новый Кубок школы. Важные изменения:
+                            1) 3 потока - младший ( 2015-2012 г.р.), средний ( 2011-2009 г.р.) и старший ( 2008 г.р. и старше) возраста.
+                            2) Контроль времени - 10 мин + 5 сек
+                            3) Награждение Кубками и медалями в конце каждого месяца по итогам 4 турниров.
+                            4) Младший и средний возраста играют по субботам с 14-00 до 17-00., старший возраст ( с участием ветеранов и взрослых) по воскресеньям с 11-00 до 15-00.
+                            В январе проводится 3 турнира: 3,5,6. Начало 3 января в 11-00</p>
+                        <span>22.12.2019</span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section id="competitions">
+    <div class="competitions-info">
+        <div class="competitions-info-content">
+            <ul class="color">
+                <li class="title">№</li>
+                <li class="page">
+                    <ul>
+                        <li>1<span></span></li>
+                        <li>2<span></span></li>
+                        <li>3<span></span></li>
+                        <li>4<span></span></li>
+                        <li>5<span></span></li>
+                        <li>6<span></span></li>
+                    </ul>
+                </li>
+                <li class="page active">
+                    <ul>
+                        <li>7<span></span></li>
+                        <li>8<span></span></li>
+                        <li>9<span></span></li>
+                        <li style="height: 7rem">10<span></span></li>
+                        <li style="height: 7rem">11<span></span></li>
+                        <li style="height: 7rem">12<span></span></li>
+                    </ul>
+                </li>
+                <li class="page">
+                    <ul>
+                        <li style="height: 7rem">13<span></span></li>
+                        <li style="height: 7rem">14<span></span></li>
+                        <li style="height: 9rem">15<span></span></li>
+                        <li style="height: 9rem">16<span></span></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <li class="title">Дата</li>
+                <li class="page">
+                    <ul>
+                        <li>3-4 января</li>
+                        <li>5 января</li>
+                        <li>6-7 января</li>
+                        <li>11 января</li>
+                        <li>12 января</li>
+                        <li>18 января</li>
+                    </ul>
+                </li>
+                <li class="page active">
+                    <ul>
+                        <li>19 января</li>
+                        <li>25 января</li>
+                        <li>26 января</li>
+                        <li style="height: 7rem">1 февраля</li>
+                        <li style="height: 7rem">2 февраля</li>
+                        <li style="height: 7rem">8 февраля</li>
+                    </ul>
+                </li>
+                <li class="page">
+                    <ul>
+                        <li style="height: 7rem">15 февраля</li>
+                        <li style="height: 7rem">29 февраля</li>
+                        <li style="height: 9rem">8,9,15,16 февраля</li>
+                        <li style="height: 9rem">22-26 февраля</li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <li class="title">Время</li>
+                <li class="page">
+                    <ul>
+                        <li>11.00-14.00</li>
+                        <li>11.00-15.00</li>
+                        <li>11.00-15.00</li>
+                        <li>14.00-17.00</li>
+                        <li>11.00-15.00</li>
+                        <li>14.00-17.00</li>
+                    </ul>
+                </li>
+                <li class="page active">
+                    <ul>
+                        <li>11.00-15.00</li>
+                        <li>14.00-17.00</li>
+                        <li>11.00-15.00</li>
+                        <li style="height: 7rem">14.00-17.00</li>
+                        <li style="height: 7rem">11.00-15.00</li>
+                        <li style="height: 7rem">14.00-17.00</li>
+                    </ul>
+                </li>
+                <li class="page">
+                    <ul>
+                        <li style="height: 7rem">14.00-17.00</li>
+                        <li style="height: 7rem">14.00-17.00</li>
+                        <li style="height: 9rem">16-00 по сб<br>10-00 по воскр</li>
+                        <li style="height: 9rem">22 февраля в 15-00<br>остальные дни в 10-00</li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <li class="title">Описание</li>
+                <li class="page">
+                    <ul>
+                        <li>Новогодний турнир
+                            <p class="dop">
+                            ( в зачет январского Кубка школы)<br>
+                            Награждение: 4 января в 14-00</p>
+                        </li>
+                        <li>1-й этап Открытого Кубка школы
+                            <p class="dop">
+                            Контроль 10 мин + 5 сек. на ход, 7 туров<br>
+                            Награждение: 26 января в 15-00
+                            </p>
+                        </li>
+                        <li>Рождественский турнир
+                            <p class="dop">
+                            ( в зачет январского Кубка школы)<br>
+                            Награждение: 7 января в 15-00</p>
+                        </li>
+                        <li>3-й этап январского Кубка школы
+                            <p class="dop">
+                                Контроль 10 мин + 5 сек. на ход, 5 туров<br>
+                                Награждение: 25 января в 17-00
+                            </p></li>
+                        <li>2-й этап Открытого Кубка школы
+                            <p class="dop">
+                                Контроль 10 мин + 5 сек. на ход, 7 туров<br>
+                                Награждение: 26 января в 15-00
+                            </p></li>
+                        <li>4-й этап январского Кубка школы
+                            <p class="dop">
+                                Контроль 10 мин + 5 сек. на ход, 5 туров<br>
+                                Награждение: 25 января в 17-00
+                            </p></li>
+                    </ul>
+                </li>
+                <li class="page active">
+                    <ul>
+                        <li>3-й этап Открытого Кубка школы
+                            <p class="dop">
+                                Контроль 10 мин + 5 сек. на ход, 7 туров<br>
+                                Награждение: 26 января в 15-00
+                            </p></li>
+                        <li>5-й этап январского Кубка школы
+                            <p class="dop">
+                                Контроль 10 мин + 5 сек. на ход, 5 туров<br>
+                                Награждение: 25 января в 17-00
+                            </p></li>
+                        <li>4-й этап Открытого Кубка школы
+                            <p class="dop">
+                                Контроль 10 мин + 5 сек. на ход, 7 туров<br>
+                                Награждение: 26 января в 15-00
+                            </p></li>
+                        <li style="height: 7rem">Этап февральского Кубка школы
+                            <p class="dop">
+                                Младший и средний возраст (2009 г.р. и моложе)<br>
+                                Контроль 10 мин + 5 сек. на ход, 5 туров<br>
+                                Награждение: 29 февраля в 15-00
+                            </p></li>
+                        <li style="height: 7rem">1-й этап мартовского Открытого Кубка школы
+                            <p class="dop">
+                                Старший возраст и взрослые (2008 г.р. и старше)<br>
+                                Контроль 10 мин + 5 сек. на ход, 5 туров<br>
+                                Награждение: 29 марта в 15-00
+                            </p></li>
+                        <li style="height: 7rem">Этап февральского Кубка школы
+                            <p class="dop">
+                                Младший и средний возраст (2009 г.р. и моложе)<br>
+                                Контроль 10 мин + 5 сек. на ход, 5 туров<br>
+                                Награждение: 29 февраля в 15-00
+                            </p></li>
+                    </ul>
+                </li>
+                <li class="page">
+                    <ul>
+                        <li style="height: 7rem">Этап февральского Кубка школы
+                            <p class="dop">
+                                Младший и средний возраст (2009 г.р. и моложе)<br>
+                                Контроль 10 мин + 5 сек. на ход, 5 туров<br>
+                                Награждение: 29 февраля в 15-00
+                            </p></li>
+                        <li style="height: 7rem">Этап февральского Кубка школы
+                            <p class="dop">
+                                Младший и средний возраст (2009 г.р. и моложе)<br>
+                                Контроль 10 мин + 5 сек. на ход, 5 туров<br>
+                                Награждение: 29 февраля в 15-00
+                            </p></li>
+                        <li style="height: 9rem">"Надежды Прикамья" -турнир для выполнения рейтингов и разрядов
+                            <p class="dop">
+                                Проводится в шахматном клубе ул.Сибирская,1<br>
+                                Заявка, оплата по безнал.расчету, запись партии и др. условия можно уточнить у Антоновой О.П.
+                            </p></li>
+                        <li style="height: 9rem">Первенство Пермского края среди мальчиков и девочек 2012, 2013 года рождения - отбор на первенство России
+                            <p class="dop">
+                                Проводится в шахматном клубе ул.Сибирская,1<br>
+                                Заявка, оплата по безнал.расчету, запись партии и др. условия можно уточнить у Антоновой О.П.
+                            </p></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <li class="title">ТB</li>
+                <li class="page">
+                    <ul>
+                        <li>300 руб</li>
+                        <li>200 руб</li>
+                        <li>300 руб</li>
+                        <li>200 руб</li>
+                        <li>200 руб</li>
+                        <li>200 руб</li>
+                    </ul>
+                </li>
+                <li class="page active">
+                    <ul>
+                        <li>200 руб</li>
+                        <li>200 руб</li>
+                        <li>200 руб</li>
+                        <li style="height: 7rem">200 руб</li>
+                        <li style="height: 7rem">200 руб</li>
+                        <li style="height: 7rem">200 руб</li>
+                    </ul>
+                </li>
+                <li class="page">
+                    <ul>
+                        <li style="height: 7rem">200 руб</li>
+                        <li style="height: 7rem">200 руб</li>
+                        <li style="height: 9rem">600 руб</li>
+                        <li style="height: 9rem">600 руб</li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <li class="title">Результат</li>
+                <li class="page">
+                    <ul>
+                        <li class="result"><span>-</span><a href="https://drive.google.com/open?id=1dDfr3QK3Xfc2b7vvIvDEGtDERXxayI6e" target="_blank"><img src="../static/icons/pdf_competitions.png"/></a></li>
+                        <li><span>-</span><a href="" target="_blank"><img src="../static/icons/pdf_competitions.png"/></a></li>
+                        <li class="result"><span>-</span><a href="https://drive.google.com/open?id=1NZlpRsHWBTyQv1NJUtv0rAdkeF57ff6y" target="_blank"><img src="../static/icons/pdf_competitions.png"/></a></li>
+                        <li class="result"><span>-</span><a href="https://drive.google.com/open?id=1BKHWTWGftLCgkm8gurqlTwjGawNBIrcN" target="_blank"><img src="../static/icons/pdf_competitions.png"/></a></li>
+                        <li class="result"><span>-</span><a href="https://drive.google.com/open?id=1TgMrxyirOjjfXSVEyH97w9OQAhLpa15T" target="_blank"><img src="../static/icons/pdf_competitions.png"/></a></li>
+                        <li class="result"><span>-</span><a href="https://drive.google.com/open?id=1Hqd_Qdwb-RvouvGTqMXLrMGoH16sDPi4" target="_blank"><img src="../static/icons/pdf_competitions.png"/></a></li>
+                    </ul>
+                </li>
+                <li class="page active">
+                    <ul>
+                        <li class="result"><span>-</span><a href="https://drive.google.com/open?id=169UvQBFnFjPuHmMtfYibee5nlg0bkf9R" target="_blank"><img src="../static/icons/pdf_competitions.png"/></a></li>
+                        <li class="result"><span>-</span><a href="https://drive.google.com/open?id=1DpBOhRzB2WWh8Yhd430Flcp9lwGvLjuA" target="_blank"><img src="../static/icons/pdf_competitions.png"/></a></li>
+                        <li class="result"><span>-</span><a href="https://drive.google.com/open?id=1OjnhC5CNt-bUa7NU83EMYa7nzEvfNChn" target="_blank"><img src="../static/icons/pdf_competitions.png"/></a></li>
+                        <li style="height: 7rem"><span>-</span><a href="" target="_blank"><img src="../static/icons/pdf_competitions.png"/></a></li>
+                        <li style="height: 7rem"><span>-</span><a href="" target="_blank"><img src="../static/icons/pdf_competitions.png"/></a></li>
+                        <li style="height: 7rem"><span>-</span><a href="" target="_blank"><img src="../static/icons/pdf_competitions.png"/></a></li>
+                    </ul>
+                </li>
+                <li class="page">
+                    <ul>
+                        <li style="height: 7rem"><span>-</span><a href="" target="_blank"><img src="../static/icons/pdf_competitions.png"/></a></li>
+                        <li style="height: 7rem"><span>-</span><a href="" target="_blank"><img src="../static/icons/pdf_competitions.png"/></a></li>
+                        <li style="height: 9rem"><span>-</span><a href="" target="_blank"><img src="../static/icons/pdf_competitions.png"/></a></li>
+                        <li style="height: 9rem"><span>-</span><a href="" target="_blank"><img src="../static/icons/pdf_competitions.png"/></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="page-control">
+            <ol>
+                <li>1</li>
+                <li class="active">2</li>
+                <li>3</li>
+            </ol>
+        </div>
+    </div>
+    <div class="calendar show">
+        <div class="date">
+            <ul>
+                <li class="arrow arrow-left"></li>
+                <li class="data"><span class="month"></span><span class="year"></span></li>
+                <li class="arrow arrow-right"></li>
+            </ul>
+        </div>
+        <table>
+            <thead>
+            <tr>
+                <th>Пн</th>
+                <th>Вт</th>
+                <th>Ср</th>
+                <th>Чт</th>
+                <th>Пт</th>
+                <th>Сб</th>
+                <th>Вс</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+
+<section>
+    <ul id="teachers">
+            <li>
+                <h4>Терехин Анатолий Николаевич</h4>
+                <div class="flipper">
+                    <div class="flip-container">
+                        <div class="front">
+                        <span class="teacher article-1">
+                            <p class="teacher-info">Тренер высшей категории<br>Автор программы</p>
+                        </span>
+                        </div>
+                        <div class="back">
+                            <p>Тренер высшей категории, с 40-летним стажем, член исполнительного комитета Российской шахматной федерации (1994-2010), тренер юношеской сборной команды
+                                России (1994-2010), председатель детской комиссии Российской шахматной федерации (1994-2010), обладатель почетного знака «За заслуги в развитии
+                                физической культуры и спорта», за большой личный вклад в развитие физической культуры и спорта в России.<br>
+                                Среди его воспитанников мастера спорта, гроссмейстеры, чемпионы и призеры российских, европейских и мировых первенств.<br>
+                                Автор 30 книг по шахматам, изданных на многих иностранных языках.</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <h4>Володина Елена Владимировна</h4>
+                <div class="flipper">
+                    <div class="flip-container">
+                        <div class="front">
+                        <span class="teacher article-2">
+                            <p class="teacher-info">Директор школы</p>
+                        </span>
+                        </div>
+                        <div class="back">
+                            <p>...</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <h4>Бахарев Андрей Иванович</h4>
+                <div class="flipper">
+                    <div class="flip-container">
+                        <div class="front">
+                        <span class="teacher article-3">
+                            <p class="teacher-info">Старший тренер</p>
+                        </span>
+                        </div>
+                        <div class="back">
+                            <p>...</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <h4>Янышева Анастасия Александровна</h4>
+                <div class="flipper">
+                    <div class="flip-container">
+                        <div class="front">
+                        <span class="teacher article-4">
+                            <p class="teacher-info">Преподаватель по логике</p>
+                        </span>
+                        </div>
+                        <div class="back">
+                            <p>...</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <h4>Игнашевич Анна Николаевна</h4>
+                <div class="flipper">
+                    <div class="flip-container">
+                        <div class="front">
+                        <span class="teacher article-5">
+                            <p class="teacher-info">Тренер по шахматам</p>
+                        </span>
+                        </div>
+                        <div class="back">
+                            <p>...</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <h4>Мальгина Татьяна Ивановна</h4>
+                <div class="flipper">
+                    <div class="flip-container">
+                        <div class="front">
+                        <span class="teacher article-6">
+                            <p class="teacher-info">Тренер по шахматам<br>Мастер спорта</p>
+                        </span>
+                        </div>
+                        <div class="back">
+                            <p>...</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <h4>Кузницына Елена Владимировна</h4>
+                <div class="flipper">
+                    <div class="flip-container">
+                        <div class="front">
+                        <span class="teacher article-7">
+                            <p class="teacher-info">Преподаватель по логике</p>
+                        </span>
+                        </div>
+                        <div class="back">
+                            <p>...</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <h4>Антонова Оксана Павловна</h4>
+                <div class="flipper">
+                    <div class="flip-container">
+                        <div class="front">
+                        <span class="teacher article-8">
+                            <p class="teacher-info">Преподаватель по логике</p>
+                        </span>
+                        </div>
+                        <div class="back">
+                            <p>...</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <h4>Антонов Андрей Павлович</h4>
+                <div class="flipper">
+                    <div class="flip-container">
+                        <div class="front">
+                        <span class="teacher article-9">
+                            <p class="teacher-info">Тренер по шахматам<br>Мастер спорта</p>
+                        </span>
+                        </div>
+                        <div class="back">
+                            <p>...</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <h4>Останин Вадим Сергеевич</h4>
+                <div class="flipper">
+                    <div class="flip-container">
+                        <div class="front">
+                            <span class="teacher article-10">
+                                <p class="teacher-info">Тренер по шахматам<br>Мастер спорта</p>
+                            </span>
+                        </div>
+                        <div class="back">
+                            <p>...</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li></li>
+            <li></li>
+        </ul>
+</section>
+
+<section id="about-school">
+        <div>
+            <div class="videowrapper">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/gor6dptvj1Q" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+<section id="schedule">
+    <h1>График работы</h1>
+    <h2>На Куйбышева, 54</h2>
+    <ul class="content">
+        <li>
+            <h3>Тренеры Терехин А.Н., Антонова О.П.</h3>
+            <ul>
+                <li class="column">
+                    <ul>
+                        <li class="title">Дни недели</li>
+                        <li>Вторник, четверг</li>
+                        <li style="flex-grow: unset">Суббота</li>
+                    </ul>
+                </li>
+                <li class="column">
+                    <ul>
+                        <li class="title">Время</li>
+                        <li>9.00-10.30</li>
+                        <li>10.00-11.30</li>
+                        <li>15.00-16.30</li>
+                        <li>16.00-17.30</li>
+                        <li>18.00-19.30</li>
+                        <li>10.00-11.10</li>
+                    </ul>
+                </li>
+                <li class="column">
+                    <ul>
+                        <li class="title">Год обучения</li>
+                        <li><4</li>
+                        <li>2</li>
+                        <li><4</li>
+                        <li>2</li>
+                        <li>2</li>
+                        <li>2</li>
+                    </ul>
+                </li>
+                <li class="column">
+                    <ul>
+                        <li class="title">Год рождения</li>
+                        <li>2007-2010</li>
+                        <li>2011-2013</li>
+                        <li>2004-2009</li>
+                        <li>2012-2013</li>
+                        <li>2012-2013</li>
+                        <li>2011-2013</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h3>Тренеры Бахарев А.И., Янышева А.А.</h3>
+            <ul>
+                <li class="column">
+                    <ul>
+                        <li class="title">Дни недели</li>
+                        <li style="flex-grow: unset">Пн, Вт, Ср, Чт, Пт</li>
+                        <li>Среда, Пятница</li>
+                        <li>Суббота</li>
+                    </ul>
+                </li>
+                <li class="column">
+                    <ul>
+                        <li class="title">Время</li>
+                        <li>по инд.графику</li>
+                        <li>16.30-18.00</li>
+                        <li>18.30-20.00</li>
+                        <li>10.00-11.10</li>
+                        <li>11.30-12.40</li>
+                    </ul>
+                </li>
+                <li class="column">
+                    <ul>
+                        <li class="title">Год обучения</li>
+                        <li><2</li>
+                        <li><2</li>
+                        <li>1</li>
+                        <li>1</li>
+                        <li>1</li>
+                    </ul>
+                </li>
+                <li class="column">
+                    <ul>
+                        <li class="title">Год рождения</li>
+                        <li>2009-2011</li>
+                        <li>2010-2013</li>
+                        <li>2013-2014</li>
+                        <li>2011-2014</li>
+                        <li>2011-2014</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h3>Тренеры Останин В.С., Игнашевич А.Н.</h3>
+            <ul>
+                <li class="column">
+                    <ul>
+                        <li class="title">Дни недели</li>
+                        <li style="flex-grow: unset">Пн, Вт, Ср, Чт, Пт</li>
+                        <li>Вторник, четверг</li>
+                    </ul>
+                </li>
+                <li class="column">
+                    <ul>
+                        <li class="title">Время</li>
+                        <li>по инд. графику</li>
+                        <li>14.00-15.30</li>
+                        <li>16.30-18.00</li>
+                        <li>18.30-20.00</li>
+                    </ul>
+                </li>
+                <li class="column">
+                    <ul>
+                        <li class="title">Год обучения</li>
+                        <li><2</li>
+                        <li>1,2</li>
+                        <li>1,2</li>
+                        <li>1,2</li>
+                    </ul>
+                </li>
+                <li class="column">
+                    <ul>
+                        <li class="title">Год рождения</li>
+                        <li>2009-2012</li>
+                        <li>2009-2011</li>
+                        <li>2010-2013</li>
+                        <li>2013-2014</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h3>Тренеры Мальгина Т.И., Батрак Е.В.</h3>
+            <ul>
+                <li class="column">
+                    <ul>
+                        <li class="title">Дни недели</li>
+                        <li>Среда, пятница</li>
+                    </ul>
+                </li>
+                <li class="column">
+                    <ul>
+                        <li class="title">Время</li>
+                        <li>9.30-11.00</li>
+                        <li>14.00-15.30</li>
+                        <li>16.30-18.00</li>
+                        <li>18.30-20.00</li>
+                    </ul>
+                </li>
+                <li class="column">
+                    <ul>
+                        <li class="title">Год обучения</li>
+                        <li>1,2,3</li>
+                        <li>1,2,3</li>
+                        <li>1,2,3</li>
+                        <li>1,2</li>
+                    </ul>
+                </li>
+                <li class="column">
+                    <ul>
+                        <li class="title">Год рождения</li>
+                        <li>2009-2010</li>
+                        <li>2010-2011</li>
+                        <li>2011-2012</li>
+                        <li>2012-2013</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <h1>График работы</h1>
+    <h2>На Боровой, 32</h2>
+    <ul class="content">
+        <li>
+            <h3>Тренер Власов М.В.</h3>
+            <ul>
+                <li class="column">
+                    <ul>
+                        <li class="title">Дни недели</li>
+                        <li style="flex-grow: unset">Вторник, Четверг</li>
+                        <li>Среда, пятница</li>
+                        <li>Суббота</li>
+                    </ul>
+                </li>
+                <li class="column">
+                    <ul>
+                        <li class="title">Время</li>
+                        <li>10.00-11.30</li>
+                        <li>16.30-18.00</li>
+                        <li>18.30-20.00</li>
+                        <li>11.00-12.30</li>
+                        <li>12.30-14.00</li>
+                    </ul>
+                </li>
+                <li class="column">
+                    <ul>
+                        <li class="title">Год обучения</li>
+                        <li>1,2</li>
+                        <li>1,2</li>
+                        <li>1,2</li>
+                        <li>1,2</li>
+                        <li>1,2</li>
+                    </ul>
+                </li>
+                <li class="column">
+                    <ul>
+                        <li class="title">Год рождения</li>
+                        <li>2009-2010</li>
+                        <li>2010-2011</li>
+                        <li>2011-2012</li>
+                        <li>2012-2013</li>
+                        <li>2007-2012</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</section>
+
+<section id="admission">
+    <div class="border">
+        <h4 id="">Поступить</h4>
+        <form name="sign_in">
+            <div class="input-box">
+                <label>Контактное имя</label>
+                <input type="text" name="contact_name">
+            </div>
+            <div class="input-box">
+                <label>E-mail</label>
+                <input type="email" name="email">
+            </div>
+            <div class="input-box">
+                <label>Имя ребенка</label>
+                <input type="text" name="student_name">
+            </div>
+            <div class="input-box">
+                <label>Год рождения</label>
+                <input type="text" name="birth_date">
+            </div>
+            <div class="input-box">
+                <label>Телефон</label>
+                <input type="text" name="phone">
+            </div>
+        </form>
+        <div class="send">Оставить заявку</div>
+        <label class="message">{{ req }}</label>
+    </div>
+</section>
+
+    <article class="comments">
+        <ul>
+            <li>
+                <div class="box">
+                    <div>
+                        <p>Моему сыну очень нравятся занятия шахматами, особенно ждёт встречи с Анатолием Николаевичем! Миша очень скромный,на другие занятия идёт,
+                            потому-что нужно,а в шахматную школу Анатолия Терёхина бежит и чувствует себя там свободно. Все преподаватели добрые и отзывчивые.Спасибо Вам большое
+                            за хорошее настроение и развитие нашего сына!</p>
+                    </div>
+                </div>
+                <div class="name">Анна Макарова</div>
+            </li>
+            <li>
+                <div class="box">
+                    <div>
+                        <p>Уважаемые родители и дети,желающие заниматься шахматами,добрый день! Если вы еще в раздумьях чем занять своего ребенка-шахматная школа
+                        Анатолия Терехина-лучшее предложение для желающих интеллектуально развить своего ребенка. Мой сын с большим удовольствием посещает школу 5 год,
+                        всегда ждет начала занятий и новых встреч с любимыми преподавателями.В школе созданы хорошие условия для занятий, пед.состав всегда внимателен
+                        к детям и родителям,спасибо им большое! Желаем новых побед, талантливых учеников и благодарных родителей!</p>
+                    </div>
+                </div>
+                <div class="name">Чернышева Ольга</div>
+            </li>
+            <li>
+                <div class="box">
+                    <div>
+                        <p>Отличная школа. Кроме серьезных спортивных достижений тренеров и их воспитанников  еще выделю любовь тренеров к детям. Дети здесь именно воспитанники.
+                        Поэтому результаты хорошие и не ограничиваются шахматами. Навыки помогают в учебе. Да и в целом полезны.  Шутка ли, дети только шахматных задач по несколько
+                        тысяч уже нарешали за пару лет. Желаем школе удачи !</p>
+                    </div>
+                </div>
+                <div class="name">Бакировы</div>
+            </li>
+            <li>
+                <div class="box">
+                    <div>
+                        <p>Добрый день! Мой сын, Иван Колобов, третий год успешно обучается в вашей замечательной шахматной школе, у не менее замечатильных педагогов! Успехи в
+                        шахматах а также в развитии логического мышления очевидны! Благодаря этим навыкам мы успешно поступили в 1 класс гимназии №17 без дополнительных курсов,
+                        школ развития и прочих других мест. Мы желаем замечательному коллективу и школе процветания и успехов во всех
+                        начинаниях! Мы с Вами до конца))))</p>
+                    </div>
+                </div>
+                <div class="name">Яна Колобова</div>
+            </li>
+        </ul>
+    </article>
+
+    <div class="svg-block">
+        <svg><symbol viewBox="0 0 1242.7159 915.29117" id="menu-svg" version="1.1"><path id="path4495" d="m 70.049098,913.14443 c -25.0312,-5.2875 -49.116629,-23.8277 -60.378809,-46.4778 -7.79694,-15.68087 -8.95671001,-21.04927 -8.92936001,-41.33327 0.0227,-16.8353 0.37316001,-19.6261 3.57228001,-28.4461 9.5803,-26.4131 27.96165,-44.9952 54.705019,-55.3025 l 11.03087,-4.2514 H 621.38245 1172.7158 l 11.0308,4.2514 c 26.7434,10.3073 45.1248,28.8894 54.705,55.3025 3.1992,8.82 3.5496,11.6108 3.5723,28.4461 0.02,14.7616 -0.4954,20.2008 -2.4632,26 -8.6413,25.46647 -24.283,43.71517 -46.8449,54.65267 -21.0346,10.1971 30.8362,9.3598 -572.27715,9.2386 -472.08381,-0.095 -542.246002,-0.36 -550.389552,-2.0802 z m -6.00352,-370.25007 c -29.379699,-8.7012 -52.420239,-31.8956 -60.954889,-61.36191 -3.67612001,-12.692 -4.14099,-33.29926 -1.02834,-45.58566 3.43046,-13.54088 11.99815,-29.2022 21.46576,-39.23836 14.660769,-15.5412 31.649979,-24.58396 52.520989,-27.95509 12.13968,-1.96084 1078.527002,-1.96084 1090.666702,0 29.1719,4.71192 54.1104,22.759 66.5434,48.15508 7.2682,14.84615 9.4566,24.23099 9.4566,40.55397 0,40.06172 -25.8183,74.30157 -64.4676,85.49597 l -10.5012,3.0416 -546.84895,-0.071 -546.848952,-0.071 z m 6.00352,-367.08329 C 43.860248,170.27904 19.651769,151.016 8.062619,126.48753 1.636079,112.88573 -0.29993101,102.36692 0.36539899,84.66667 1.282249,60.27507 8.700329,42.88442 25.382429,26.01778 35.775339,15.5099 46.373448,8.83763 60.728558,3.76484 L 71.382428,0 H 621.38245 1171.3824 l 10.6539,3.76484 c 14.3551,5.07279 24.9532,11.74506 35.3461,22.25294 16.6821,16.86664 24.1002,34.25729 25.0171,58.64889 0.6653,17.70025 -1.2707,28.21906 -7.6973,41.82086 -8.6473,18.30214 -23.4957,33.21559 -41.9864,42.17043 -21.0436,10.19113 30.8104,9.35451 -572.27715,9.23333 -472.08381,-0.0948 -542.246002,-0.36002 -550.389552,-2.08022 z" style="fill:#5a3618;stroke-width:1.33333325" /></symbol></svg>
+        <svg><symbol viewBox="0 0 7.9e+02 5.8e+02"id="admission-svg" version="1.1"><path id="path817" d="M 610,430 V 280 l -30,20 c -20,10 -70,30 -110,50 l -70,40 -90,-50 C 260,320 200,290 180,280 150,270 120,250 95,240 73,230 42,220 27,210 L 0,190 41,170 C 190,100 400,0 400,0 c 0,0 50,23 110,52 50,28 130,68 160,78 20,20 70,40 90,50 l 40,10 -20,10 c -10,10 -40,20 -50,30 l -40,10 v 170 c 0,90 0,170 0,170 0,0 -10,-10 -20,-10 -10,-10 -10,-20 -20,-20 0,0 -10,10 -20,20 -10,0 -10,10 -10,10 -10,0 -10,-70 -10,-150 z M 420,190 c 10,0 10,-20 0,-30 -20,-10 -40,-10 -50,10 0,10 0,20 10,20 0,10 30,10 40,0 z m -60,340 c -20,0 -60,-10 -80,-10 -50,-20 -80,-40 -90,-60 l -10,-10 v -70 -70 h 10 c 10,10 60,30 110,60 l 100,40 60,-30 c 40,-20 70,-30 80,-40 0,0 20,-10 30,-10 l 30,-10 v 70 80 l -10,10 c -20,20 -70,40 -120,50 -30,0 -80,0 -110,0 z" style="fill:#ffffff;stroke-width:1.33" /></symbol></svg>
+        <svg><symbol viewBox="0 0 668.61127 872" id="competitions-svg" version="1.1"><path id="path12" d="m 138.29529,857 v -15 h 192 192 v 15 15 h -192 -192 z m 23.4529,-31.41062 c -1.9107,-1.39694 -1.9593,-3.54558 -2.248,-99.25862 -0.1622,-53.80692 -0.022,-99.74455 0.3117,-102.08363 l 0.6068,-4.25287 169.9569,0.25287 169.957,0.25287 -0.028,102.4259 c -0.015,56.33425 -0.2862,102.68425 -0.6019,103 -0.3157,0.31576 -76.0453,0.69048 -168.2879,0.83271 -144.0225,0.22208 -167.9897,0.0569 -169.6667,-1.16923 z M 441.29529,699.9956 v -47.00441 l -109.75,0.25441 -109.75,0.2544 -0.2607,45.5 c -0.1434,25.025 -0.045,46.0625 0.2186,46.75 0.3794,0.98947 23.3079,1.25 110.0107,1.25 h 109.5314 z M 138.29529,588 v -12 h 192 192 v 12 12 h -192 -192 z m 119.6743,-28.75 c -1.2478,-2.10948 -1.6874,-9.48603 -0.7679,-12.88738 2.3365,-8.64292 11.963,-15.49741 29.3232,-20.87933 l 8.7297,-2.70632 0.2703,-20.13848 0.2704,-20.13849 37.75,-0.26203 37.75,-0.26202 v 20.44464 c 0,18.6129 0.1568,20.48968 1.75,20.94736 13.487,3.87439 17.609,5.29423 22.433,7.7271 10.5499,5.32061 15.817,13.34033 15.817,24.08309 V 560 h -76.441 c -42.0426,0 -76.6406,-0.3375 -76.8847,-0.75 z m 15.7151,-107.07221 c 0.1444,-7.60499 -2.6381,-11.3604 -13.1278,-17.71815 -14.3981,-8.72655 -25.0746,-18.47738 -39.6867,-36.24586 -3.7479,-4.55742 -7.998,-8.89761 -9.4446,-9.64486 -1.4467,-0.74725 -5.7803,-1.6532 -9.6303,-2.01322 -51.0647,-4.77508 -87.6885,-20.41033 -119.2989,-50.93038 C 64.19869,317.95868 50.76159,298.99226 37.77419,272.5 14.81979,225.6767 3.59384,175.65312 0.68987,107.25 L 0,91.000002 h 58.76289 58.7628 l -0.6013,-5.25 c -0.3307,-2.8875 -1.0677,-11.1 -1.6377,-18.25 -0.57,-7.15 -1.2716,-14.4625 -1.5592,-16.25 l -0.5229,-3.25 h 221.0454 221.0453 l -0.063,2.25 c -0.034,1.2375 -0.8352,10.71185 -1.7792,21.05412 -0.9441,10.34227 -1.5159,19.00477 -1.2707,19.25 0.2452,0.24524 26.5421,0.44588 58.4374,0.44588 h 57.9915 l -0.654,18.749998 c -2.1809,62.52967 -15.101,118.12108 -38.2037,164.3801 -25.6918,51.44303 -60.6671,84.1821 -107.0505,100.20602 -12.4342,4.29562 -23.7984,6.78251 -46.256,10.12252 -9.5414,1.41903 -18.3766,3.13385 -19.6339,3.81071 -1.2573,0.67686 -10.7758,9.28339 -21.1522,19.12562 -10.3763,9.84223 -23.4193,21.41824 -28.9843,25.72446 -12.4775,9.65506 -13.8817,11.59028 -13.8817,19.13057 V 458 h -59.6106 -59.6105 z m 116.2083,-38.64989 c 6.605,-4.32772 36.8531,-46.13297 49.8983,-68.96315 37.1279,-64.97706 60.2631,-141.54476 66.9466,-221.56475 0.8499,-10.175 1.7526,-20.64493 2.0061,-23.266518 l 0.4609,-4.76651 -26.2048,0.26651 -26.2048,0.26652 L 456.57419,103 c -3.1015,105.20868 -22.1702,191.85013 -57.9699,263.39495 -8.5052,16.99736 -14.2496,27.28088 -22.002,39.38712 -3.4877,5.44648 -4.8761,8.42756 -4.0553,8.707 5.3192,1.81083 13.8356,1.33892 17.346,-0.96117 z m -191.3281,-45.78809 c 0.2659,-0.6931 -2.6133,-7.08025 -6.3983,-14.19367 -22.3351,-41.97586 -38.4098,-85.23265 -51.8664,-139.57172 -3.9382,-15.90304 -13.6084,-62.83711 -16.0141,-77.72442 l -1.1715,-7.25 h -41.9097 -41.9096 v 9.30011 c 0,30.88302 6.1749,71.53239 14.9874,98.66129 18.4467,56.78724 52.4575,97.02059 99.054,117.17653 6.0311,2.60882 41.6749,14.57146 44.1016,14.8012 0.3536,0.0335 0.8606,-0.50621 1.1266,-1.19932 z m 289.2093,-3.73437 C 562.78739,344.66409 612.30009,281.99053 625.24009,190 c 1.9523,-13.87867 5.0552,-48.92996 5.0552,-57.10512 V 129 h -40.977 -40.9769 l -1.5806,2.41219 c -0.8692,1.3267 -3.3011,11.5642 -5.404,22.75 -15.3019,81.3933 -31.8145,134.15333 -58.7726,187.78652 -6.7589,13.44678 -12.2889,24.58428 -12.2889,24.75 0,1.03863 7.4682,-0.11212 17.4789,-2.69327 z M 96.29529,15.500002 V 0 h 236.5282 236.5282 l -0.2782,13.75 -0.2782,13.750002 -3.5,1.74844 c -3.3021,1.64955 -16.6652,1.74854 -236.25,1.75 l -232.75,0.002 z" style="fill:#ffffff;fill-opacity:1" /></symbol></svg>
+        <svg><symbol viewBox="0 0 1242.7159 915.29117" id="home-svg" version="1.1"><path id="path817" d="m 228.1707,822.65063 0.063,-221.66666 211.4712,-174.66666 c 116.3092,-96.06666 212.2109,-174.66666 213.115,-174.66666 0.904,0 93.0553,75.6 204.7807,167.99999 111.7254,92.4 207.1679,171.3 212.0944,175.33333 l 8.9574,7.33333 0.061,221 0.061,221 H 653.4407 228.1073 l 0.063,-221.66667 z m 610.6035,-105 V 541.65064 h -186 -186 v 175.99999 176 h 186 186 z m -353.3333,84 V 728.3173 h 78.6666 78.6667 v 73.33333 73.33333 h -78.6667 -78.6666 z m 178.6666,0 V 728.3173 h 78.6667 78.6667 v 73.33333 73.33333 H 742.7742 664.1075 Z M 485.4409,634.98397 v -73.33333 h 78.6666 78.6667 v 73.33333 73.33333 h -78.6667 -78.6666 z m 178.6666,0 v -73.33333 h 78.6667 78.6667 v 73.33333 73.33333 H 742.7742 664.1075 Z M 38.6845,583.31989 C 20.1665,560.76847 3.8868,541.05288 2.5076,539.50747 L 0,536.69763 325.9354,268.36366 C 505.1998,120.77999 652.2882,0.01633766 652.7983,1.6562796e-6 653.3085,-0.01632834 800.6963,120.72303 980.3267,268.30969 l 326.6007,268.33939 -2.5305,2.83411 c -1.3918,1.55877 -17.6807,21.28412 -36.1976,43.83411 -18.5169,22.55 -33.8364,41 -34.0433,41 -0.2069,0 -131.059,-107.36569 -290.7824,-238.59042 l -290.4063,-238.59041 -10.0966,8.32858 c -5.5531,4.58073 -112.0965,92.26311 -236.7632,194.84972 -124.6667,102.58661 -250.0667,205.79087 -278.6667,229.3428 -28.6,23.55192 -52.6945,43.23641 -53.5435,43.74329 -0.9627,0.57484 -14.2119,-14.50608 -35.2128,-40.08097 z" style="fill:#ffffff;stroke-width:1.33333337" /></symbol></svg>
+        <svg><symbol viewBox="0 0 1242.7159 915.29117" id="home-svg" version="1.1"><path id="path817" d="m 228.1707,822.65063 0.063,-221.66666 211.4712,-174.66666 c 116.3092,-96.06666 212.2109,-174.66666 213.115,-174.66666 0.904,0 93.0553,75.6 204.7807,167.99999 111.7254,92.4 207.1679,171.3 212.0944,175.33333 l 8.9574,7.33333 0.061,221 0.061,221 H 653.4407 228.1073 l 0.063,-221.66667 z m 610.6035,-105 V 541.65064 h -186 -186 v 175.99999 176 h 186 186 z m -353.3333,84 V 728.3173 h 78.6666 78.6667 v 73.33333 73.33333 h -78.6667 -78.6666 z m 178.6666,0 V 728.3173 h 78.6667 78.6667 v 73.33333 73.33333 H 742.7742 664.1075 Z M 485.4409,634.98397 v -73.33333 h 78.6666 78.6667 v 73.33333 73.33333 h -78.6667 -78.6666 z m 178.6666,0 v -73.33333 h 78.6667 78.6667 v 73.33333 73.33333 H 742.7742 664.1075 Z M 38.6845,583.31989 C 20.1665,560.76847 3.8868,541.05288 2.5076,539.50747 L 0,536.69763 325.9354,268.36366 C 505.1998,120.77999 652.2882,0.01633766 652.7983,1.6562796e-6 653.3085,-0.01632834 800.6963,120.72303 980.3267,268.30969 l 326.6007,268.33939 -2.5305,2.83411 c -1.3918,1.55877 -17.6807,21.28412 -36.1976,43.83411 -18.5169,22.55 -33.8364,41 -34.0433,41 -0.2069,0 -131.059,-107.36569 -290.7824,-238.59042 l -290.4063,-238.59041 -10.0966,8.32858 c -5.5531,4.58073 -112.0965,92.26311 -236.7632,194.84972 -124.6667,102.58661 -250.0667,205.79087 -278.6667,229.3428 -28.6,23.55192 -52.6945,43.23641 -53.5435,43.74329 -0.9627,0.57484 -14.2119,-14.50608 -35.2128,-40.08097 z" style="fill:#ffffff;stroke-width:1.33333337" /></symbol></svg>
+        <svg><symbol viewBox="0 0 1242.7159 915.29117" id="home-svg" version="1.1"><path id="path817" d="m 228.1707,822.65063 0.063,-221.66666 211.4712,-174.66666 c 116.3092,-96.06666 212.2109,-174.66666 213.115,-174.66666 0.904,0 93.0553,75.6 204.7807,167.99999 111.7254,92.4 207.1679,171.3 212.0944,175.33333 l 8.9574,7.33333 0.061,221 0.061,221 H 653.4407 228.1073 l 0.063,-221.66667 z m 610.6035,-105 V 541.65064 h -186 -186 v 175.99999 176 h 186 186 z m -353.3333,84 V 728.3173 h 78.6666 78.6667 v 73.33333 73.33333 h -78.6667 -78.6666 z m 178.6666,0 V 728.3173 h 78.6667 78.6667 v 73.33333 73.33333 H 742.7742 664.1075 Z M 485.4409,634.98397 v -73.33333 h 78.6666 78.6667 v 73.33333 73.33333 h -78.6667 -78.6666 z m 178.6666,0 v -73.33333 h 78.6667 78.6667 v 73.33333 73.33333 H 742.7742 664.1075 Z M 38.6845,583.31989 C 20.1665,560.76847 3.8868,541.05288 2.5076,539.50747 L 0,536.69763 325.9354,268.36366 C 505.1998,120.77999 652.2882,0.01633766 652.7983,1.6562796e-6 653.3085,-0.01632834 800.6963,120.72303 980.3267,268.30969 l 326.6007,268.33939 -2.5305,2.83411 c -1.3918,1.55877 -17.6807,21.28412 -36.1976,43.83411 -18.5169,22.55 -33.8364,41 -34.0433,41 -0.2069,0 -131.059,-107.36569 -290.7824,-238.59042 l -290.4063,-238.59041 -10.0966,8.32858 c -5.5531,4.58073 -112.0965,92.26311 -236.7632,194.84972 -124.6667,102.58661 -250.0667,205.79087 -278.6667,229.3428 -28.6,23.55192 -52.6945,43.23641 -53.5435,43.74329 -0.9627,0.57484 -14.2119,-14.50608 -35.2128,-40.08097 z" style="fill:#ffffff;stroke-width:1.33333337" /></symbol></svg>
+        <svg><symbol viewBox="0 0 1242.7159 915.29117" id="home-svg" version="1.1"><path id="path817" d="m 228.1707,822.65063 0.063,-221.66666 211.4712,-174.66666 c 116.3092,-96.06666 212.2109,-174.66666 213.115,-174.66666 0.904,0 93.0553,75.6 204.7807,167.99999 111.7254,92.4 207.1679,171.3 212.0944,175.33333 l 8.9574,7.33333 0.061,221 0.061,221 H 653.4407 228.1073 l 0.063,-221.66667 z m 610.6035,-105 V 541.65064 h -186 -186 v 175.99999 176 h 186 186 z m -353.3333,84 V 728.3173 h 78.6666 78.6667 v 73.33333 73.33333 h -78.6667 -78.6666 z m 178.6666,0 V 728.3173 h 78.6667 78.6667 v 73.33333 73.33333 H 742.7742 664.1075 Z M 485.4409,634.98397 v -73.33333 h 78.6666 78.6667 v 73.33333 73.33333 h -78.6667 -78.6666 z m 178.6666,0 v -73.33333 h 78.6667 78.6667 v 73.33333 73.33333 H 742.7742 664.1075 Z M 38.6845,583.31989 C 20.1665,560.76847 3.8868,541.05288 2.5076,539.50747 L 0,536.69763 325.9354,268.36366 C 505.1998,120.77999 652.2882,0.01633766 652.7983,1.6562796e-6 653.3085,-0.01632834 800.6963,120.72303 980.3267,268.30969 l 326.6007,268.33939 -2.5305,2.83411 c -1.3918,1.55877 -17.6807,21.28412 -36.1976,43.83411 -18.5169,22.55 -33.8364,41 -34.0433,41 -0.2069,0 -131.059,-107.36569 -290.7824,-238.59042 l -290.4063,-238.59041 -10.0966,8.32858 c -5.5531,4.58073 -112.0965,92.26311 -236.7632,194.84972 -124.6667,102.58661 -250.0667,205.79087 -278.6667,229.3428 -28.6,23.55192 -52.6945,43.23641 -53.5435,43.74329 -0.9627,0.57484 -14.2119,-14.50608 -35.2128,-40.08097 z" style="fill:#ffffff;stroke-width:1.33333337" /></symbol></svg>
+        <svg><symbol viewBox="0 0 1242.7159 915.29117" id="home-svg" version="1.1"><path id="path817" d="m 228.1707,822.65063 0.063,-221.66666 211.4712,-174.66666 c 116.3092,-96.06666 212.2109,-174.66666 213.115,-174.66666 0.904,0 93.0553,75.6 204.7807,167.99999 111.7254,92.4 207.1679,171.3 212.0944,175.33333 l 8.9574,7.33333 0.061,221 0.061,221 H 653.4407 228.1073 l 0.063,-221.66667 z m 610.6035,-105 V 541.65064 h -186 -186 v 175.99999 176 h 186 186 z m -353.3333,84 V 728.3173 h 78.6666 78.6667 v 73.33333 73.33333 h -78.6667 -78.6666 z m 178.6666,0 V 728.3173 h 78.6667 78.6667 v 73.33333 73.33333 H 742.7742 664.1075 Z M 485.4409,634.98397 v -73.33333 h 78.6666 78.6667 v 73.33333 73.33333 h -78.6667 -78.6666 z m 178.6666,0 v -73.33333 h 78.6667 78.6667 v 73.33333 73.33333 H 742.7742 664.1075 Z M 38.6845,583.31989 C 20.1665,560.76847 3.8868,541.05288 2.5076,539.50747 L 0,536.69763 325.9354,268.36366 C 505.1998,120.77999 652.2882,0.01633766 652.7983,1.6562796e-6 653.3085,-0.01632834 800.6963,120.72303 980.3267,268.30969 l 326.6007,268.33939 -2.5305,2.83411 c -1.3918,1.55877 -17.6807,21.28412 -36.1976,43.83411 -18.5169,22.55 -33.8364,41 -34.0433,41 -0.2069,0 -131.059,-107.36569 -290.7824,-238.59042 l -290.4063,-238.59041 -10.0966,8.32858 c -5.5531,4.58073 -112.0965,92.26311 -236.7632,194.84972 -124.6667,102.58661 -250.0667,205.79087 -278.6667,229.3428 -28.6,23.55192 -52.6945,43.23641 -53.5435,43.74329 -0.9627,0.57484 -14.2119,-14.50608 -35.2128,-40.08097 z" style="fill:#ffffff;stroke-width:1.33333337" /></symbol></svg>
+    </div>
+    <section id="map">
+        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A291063a37c41997a4ca85c39d7c90ebd383570601c35707f1d623d726ccccfb2&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+    </section>
+{% endblock %}
+
+{% block js_func %}
+    {{ super() }}
+    <script type="text/javascript" src="{{url_for('static', filename='js/index.js')}}?v=7" ></script>
+    <script type="text/javascript" src="{{url_for('static', filename='js/news.js')}}?v=6" ></script>
+    <script type="text/javascript" src="{{url_for('static', filename='js/competitions.js')}}?v=30" ></script>
+{% endblock %}
+
+

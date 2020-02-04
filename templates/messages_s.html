@@ -1,0 +1,107 @@
+{% extends "student.html" %}
+
+{% block css_style %}
+    {{ super() }}
+    <link href="{{url_for('static', filename='css/messages.css')}}?v=21" rel="stylesheet" type="text/css"/>
+    {% block unic_css %}
+    {% endblock %}
+{% endblock %}
+
+
+
+{% block content %}
+<section class="space"></section>
+
+    <section class="center">
+        <article>
+            <div class="content">
+                <div class="article-content">
+                    <h2>Летние сборы!</h2>
+                    <p>Мы начали формировать группы на учебно-тренировочные сборы, которые будут проходить на Черном море в п. Витязево г. Анапа. Ждем Ваших заявок.<br><br>
+                        <!--  <a href="https://drive.google.com/uc?export=download&id=1UuXx1-U-tqaYYrJhX4pYUAlxSTxjyJ_J">СКАЧАТЬ</a>-->
+                        <a href="https://drive.google.com/open?id=1ZspKSy2uu4oQQN_HlYwv26ZZKklbRpnE" target="_blank">ПРЕЗЕНТАЦИЯ</a></p>
+                    <span class="from">Администрация школы</span>
+                    <span class="article-date">14.01.2020</span>
+                </div>
+                <div class="img see"></div>
+            </div>
+        </article>
+        <article>
+            <div class="content">
+                <div class="article-content">
+                    <h2>Правила оплаты</h2>
+                    <p>Напоминаем Вам о том, что оплата занятий в нашей Школе осуществляется авансовым платежом до 10-го числа
+                        каждого месяца. В случае задержки оплаты, начисляется штрафная неустойка в размере 10% от ежемесячной оплаты</p>
+                    <span class="from">Администрация школы</span>
+                    <span class="article-date">16.10.2019</span>
+                </div>
+                <div class="img calendar"></div>
+            </div>
+        </article>
+        <article class="{{ class_name }}">
+            <div class="content">
+                <div class="article-content">
+                    <h2>Приглашение на собрание!</h2>
+                    <p>18 февраля (понедельник) в 18:30 состоится собрание для родителей тех детей, которые планируют поездку в Анапу в 1 смену без родителей.<br>
+                        Повестка собрания:<br>
+                        Приобретение билетов – самолет или поезд туда и обратно.<br></p>
+                    <span class="from">Администрация школы</span>
+                    <span class="article-date">04.02.2019</span>
+                </div>
+                <div class="img for-special"></div>
+            </div>
+        </article>
+        <article>
+            <div class="content">
+                <div class="article-content">
+                    <h2>Уважаемые родители!</h2>
+                    <p>Появилась функция Обратной связи! Теперь у Вас есть возможность отправить нам сообщение по любому интересующему Вас вопросу</p>
+                    <span class="from">Администрация школы</span>
+                    <span class="article-date">18.11.2018</span>
+                </div>
+                <div class="img administration"></div>
+            </div>
+        </article>
+        {% if feedback is defined and feedback != None %}
+            {% for message in feedback %}
+            <article>
+                <div class="content">
+                    <div class="article-content">
+                        <h2>{{ message['topic'] }}</h2>
+                        <p>{{ message['message'] }}</p>
+                        <span class="from">{{ message['who'] }}</span>
+                        <span class="article-date">{{ message['date'] }}</span>
+                    </div>
+                    <div class="img"></div>
+                </div>
+            </article>
+            {% endfor %}
+        {% else %}
+        {% endif %}
+
+        <div id="feedback">Обратная связь</div>
+    </section>
+    <section class="space"></section>
+<div class="bg-modal feedback">
+    <div class="model-content">
+        <button class="close">&times;</button>
+        <form name="feedback">
+            <aside>
+                <label>Тема</label>
+                <input name="topic" type="text">
+            </aside>
+            <textarea placeholder="Содержание" name="content"></textarea>
+            <div class="send">Отправить</div>
+            <label class="message"></label>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block js_func %}
+    {{ super() }}
+    <script type="text/javascript" src="{{url_for('static', filename='js/messages.js')}}?v=12" ></script>
+    {% block unic_js %}
+    {% endblock %}
+{% endblock %}

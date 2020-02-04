@@ -1,0 +1,53 @@
+{% extends "admin.html" %}
+
+{% block css_style %}
+{{ super() }}
+    <link href="{{url_for('static', filename='css/information_table.css')}}?v=5" rel="stylesheet" type="text/css"/>
+    <link href="{{url_for('static', filename='css/stuff_a.css')}}?v=4" rel="stylesheet" type="text/css"/>
+    {% block unic_css %}
+    {% endblock %}
+{% endblock %}
+
+
+{% block content %}
+<section class="admin">
+    <div class="personal-data">
+        <ul class="number">
+            <li class="title"><span>№</span></li>
+            {% for teacher in salary_info %}
+            <li>{{ loop.index }}</li>
+            {% endfor %}
+        </ul>
+        <ul class="name">
+            <li class="title" style="font-weight: normal"><span>Тренер</span></li>
+            {% for teacher in salary_info %}
+            <li>{{ teacher['name'] }}</li>
+            {% endfor %}
+        </ul>
+        <ul class="phone">
+            <li class="title"><span>Зарплата</span></li>
+            {% for teacher in salary_info %}
+            <li>{{ teacher['salary'] }}</li>
+            {% endfor %}
+        </ul>
+        <ul class="students-number">
+            <li class="title"><span>Колличество<br>детей</span></li>
+            {% for teacher in salary_info %}
+            <li>{{ teacher['students_number'] }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <a href="/excel_export?nocache='+Math.floor(Math.random() * 1000)+'" class="excel">
+        <img src="../static/icons/excel.svg">
+        <span>Скачать<br>зарплаты</span>
+    </a>
+</section>
+{% endblock %}
+
+{% block js_func %}
+{{ super() }}
+    <script type="text/javascript" src="{{url_for('static', filename='js/information_table.js')}}?v=3" ></script>
+    <script type="text/javascript" src="{{url_for('static', filename='js/stuff_a.js')}}?v=9" ></script>
+    {% block unic_js %}
+    {% endblock %}
+{% endblock %}

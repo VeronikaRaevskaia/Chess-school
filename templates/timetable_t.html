@@ -1,0 +1,40 @@
+{% extends "teacher.html" %}
+
+{% block css_style %}
+    {{ super() }}
+    <link href="{{url_for('static', filename='css/timetable.css')}}?v=7" rel="stylesheet" type="text/css"/>
+    {% block unic_css %}
+    {% endblock %}
+{% endblock %}
+
+{% block content %}
+     <!--   <div class="timetable">
+            <ul>
+                {% for entry in data %}
+                <li>{{ entry['group_name'] }}</li>
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for entry in data %}
+                <li>
+                    {% for wday in entry['weekdays'] %}
+                    {{ wday }}
+                    {% endfor %}
+                </li>
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for entry in data %}
+                <li>{{ entry['time'] }}</li>
+                {% endfor %}
+            </ul>
+        </div> -->
+{% endblock %}
+
+
+{% block js_func %}
+    {{ super() }}
+    <script type="text/javascript" src="{{url_for('static', filename='js/messages.js')}}?v=12" ></script>
+    {% block unic_js %}
+    {% endblock %}
+{% endblock %}

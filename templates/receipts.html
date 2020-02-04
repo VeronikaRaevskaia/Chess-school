@@ -1,0 +1,23 @@
+{% extends "teacher.html" %}
+
+{% block css_style %}
+    {{ super() }}
+    <link href="{{url_for('static', filename='css/receipts.css')}}" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block current_page %}
+    Квитанции
+{% endblock %}
+
+{% block content %}
+{% block attendance %}
+<div class="group-list">
+</div>
+{% endblock %}
+{% endblock %}
+
+
+{% block js_func %}
+{{ super() }}
+<script type="text/javascript" src="{{url_for('static', filename='js/receipts.js')}}?v=1" ></script>
+{% endblock %}

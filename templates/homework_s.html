@@ -1,0 +1,60 @@
+{% extends "student.html" %}
+
+{% block css_style %}
+{{ super() }}
+    <link href="{{url_for('static', filename='css/homework.css')}}?v=6" rel="stylesheet" type="text/css"/>
+    {% block unic_css %}
+    {% endblock %}
+{% endblock %}
+
+
+{% block content %}
+<section class="left"></section>
+<section class="space"></section>
+<section class="right">
+    <ul class="empty-block">
+        <li class="empty-image">
+            <span>Нет домашних<br>заданий</span>
+            <img src="../static/icons/house.png">
+        </li>
+        <li class="formats show">
+            <span>Допустимые<br>форматы</span>
+            <ul class="formats-icons">
+                <li><img src="../static/icons/doc.png">
+                    <img src="../static/icons/pdf.png"></li>
+                <li><img src="../static/icons/jpg.png">
+                    <img src="../static/icons/png.png"></li>
+            </ul>
+        </li>
+        <li>
+            <span>Допустимый размер<br>файла 24Мб</span>
+            <img src="../static/icons/size.png">
+        </li>
+    </ul>
+    <div class="homeworks-block">
+        {% if homeworks is defined and homeworks != None %}
+        {% for homework in homeworks %}
+        <ul class="homework">
+            <li class="file-name"><span class="file-name">{{ homework['filename'] }}</span></li>
+            <li class="image"><img src="../static/icons/{{ homework['format'] }}.png"></li>
+            <li>{{ homework['group'] }}</li>
+            <li>{{ homework['student'] }}</li>
+            <li>{{ homework['date'] }}</li>
+            <li class="buttons-block">
+                <button class="download"><a href="/uploads/" target="_blank">Скачать</a></button>
+            </li>
+        </ul>
+        {% endfor %}
+        {% else %}
+        {% endif %}
+    </div>
+</section>
+{% endblock %}
+
+
+{% block js_func %}
+{{ super() }}
+    <script type="text/javascript" src="{{url_for('static', filename='js/homework_s.js')}}?v=3" ></script>
+    {% block unic_js %}
+    {% endblock %}
+{% endblock %}

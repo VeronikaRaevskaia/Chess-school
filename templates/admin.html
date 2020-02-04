@@ -1,0 +1,60 @@
+{% extends "personal_account.html" %}
+
+{% block css_style %}
+    {{ super() }}
+    <link href="{{url_for('static', filename='css/admin.css')}}?v=16" rel="stylesheet" type="text/css"/>
+    {% block unic_css %}
+        <link href="{{url_for('static', filename='css/slider.css')}}?v=2" rel="stylesheet" type="text/css"/>
+        <link href="{{url_for('static', filename='css/pa_slider.css')}}?v=2" rel="stylesheet" type="text/css"/>
+    {% endblock %}
+{% endblock %}
+
+
+{% block menu %}
+    {{ super() }}
+        <li class="timetable_a"><a href="/timetable_a">Расписание</a></li>
+        <li class="stuff_a"><a href="/stuff_a">Сотрудники</a></li>
+        <li class="personal_data_a"><a href="/personal_data_a">Персональные данные</a></li>
+        <li class="payments_a"><a href="/payments_a">Оплаты</a></li>
+        <li class="acquiring_a"><a href="/acquiring_a">Эквайринг</a></li>
+
+{% endblock %}
+
+{% block main%}
+{{ super() }}
+<slider id="pa-slider">
+    <div class="slides-container">
+        <slide><a href="/timetable_a">
+            <p>Расписание</p>
+        </a></slide>
+        <slide><a href="/stuff_a">
+            <p>Сотрудники</p>
+        </a></slide>
+        <slide><a href="/personal_data_a">
+            <p>Персональные данные</p>
+        </a></slide>
+        <slide><a href="/payments_a">
+            <p>Оплаты</p>
+        </a></slide>
+        <slide><a href="/visits_a">
+            <p>Эквайринг</p>
+        </a></slide>
+    </div>
+    <div class="dots-wrapper">
+        <ul class="dots-container">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</slider>
+{% endblock %}
+
+{% block js_func %}
+    {% block unic_js %}
+    <script type="text/javascript" src="{{url_for('static', filename='js/slider.js')}}?v=2" ></script>
+    {% endblock %}
+{{ super() }}
+{% endblock %}
